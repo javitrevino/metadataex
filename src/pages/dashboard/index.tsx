@@ -39,7 +39,7 @@ const Overview: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Overview | Material Kit Pro</title>
+        <title>Overview | Healhty Church </title>
       </Head>
       <Box
         component="main"
