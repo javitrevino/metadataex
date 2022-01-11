@@ -13,8 +13,9 @@ import { alpha, useTheme } from "@mui/material/styles"
 import { ArrowRight as ArrowRightIcon } from "../../../icons/arrow-right"
 import { ChevronDown as ChevronDownIcon } from "../../../icons/chevron-down"
 import { Chart } from "../../chart"
+import NextLink from "next/link"
 
-export const OverviewPrivateWallet: FC = (props) => {
+export const OverviewServing: FC = (props) => {
   const theme = useTheme()
 
   const chartOptions: ApexOptions = {
@@ -66,7 +67,7 @@ export const OverviewPrivateWallet: FC = (props) => {
         }}
       >
         <Chart
-          height={160}
+          height={140}
           options={chartOptions}
           series={chartSeries}
           type="radialBar"
@@ -93,29 +94,23 @@ export const OverviewPrivateWallet: FC = (props) => {
               mr: 3,
             }}
           >
-            <Typography color="secondary" variant="h4">
-              50 / 70 Serving Opps
-            </Typography>
+            <Typography variant="h4">53 SO&#39;s</Typography>
             <Typography color="textSecondary" sx={{ mt: 1 }} variant="body2">
-              Total Capacity
+              Total Active SO&#8217;s
             </Typography>
           </Box>
-          <Avatar
-            sx={{
-              backgroundColor: alpha(theme.palette.error.main, 0.08),
-              color: "error.main",
-            }}
-            variant="rounded"
-          >
-            <ChevronDownIcon fontSize="small" />
-          </Avatar>
         </Box>
       </Box>
       <Divider />
       <CardActions>
-        <Button endIcon={<ArrowRightIcon fontSize="small" />}>
-          New Serving Opp
-        </Button>
+        <NextLink href={"dashboard/serving-opps"}>
+          <Button
+            variant="contained"
+            endIcon={<ArrowRightIcon fontSize="small" />}
+          >
+            Go To SO&#39;s
+          </Button>
+        </NextLink>
       </CardActions>
     </Card>
   )

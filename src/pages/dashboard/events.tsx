@@ -19,8 +19,9 @@ import { AnalyticsVisitsByCountry } from "../../components/dashboard/analytics/a
 import { AnalyticsTrafficSources } from "../../components/dashboard/analytics/analytics-traffic-sources"
 import { Reports as ReportsIcon } from "../../icons/reports"
 import { gtm } from "../../lib/gtm"
+import { CustomerListTable } from "src/components/dashboard/customer/customer-list-table"
 
-const Analytics: NextPage = () => {
+const Events: NextPage = () => {
   useEffect(() => {
     gtm.push({ event: "page_view" })
   }, [])
@@ -41,7 +42,7 @@ const Analytics: NextPage = () => {
           <Box sx={{ mb: 4 }}>
             <Grid container justifyContent="space-between" spacing={3}>
               <Grid item>
-                <Typography variant="h4">Analytics</Typography>
+                <Typography variant="h4">Events</Typography>
               </Grid>
               <Grid
                 item
@@ -51,13 +52,6 @@ const Analytics: NextPage = () => {
                   m: -1,
                 }}
               >
-                <Button
-                  startIcon={<ReportsIcon fontSize="small" />}
-                  sx={{ m: 1 }}
-                  variant="outlined"
-                >
-                  Reports
-                </Button>
                 <TextField
                   defaultValue="week"
                   label="Period"
@@ -72,7 +66,7 @@ const Analytics: NextPage = () => {
               </Grid>
             </Grid>
           </Box>
-          <AnalyticsGeneralOverview />
+
           <Box sx={{ mt: 4 }}>
             <Grid container spacing={4}>
               <Grid item md={12} xs={12}>
@@ -93,10 +87,10 @@ const Analytics: NextPage = () => {
   )
 }
 
-Analytics.getLayout = (page) => (
+Events.getLayout = (page) => (
   <AuthGuard>
     <DashboardLayout>{page}</DashboardLayout>
   </AuthGuard>
 )
 
-export default Analytics
+export default Events

@@ -16,10 +16,9 @@ import {
 } from "@mui/material"
 import { AuthGuard } from "../../components/authentication/auth-guard"
 import { DashboardLayout } from "../../components/dashboard/dashboard-layout"
-import { OverviewCryptoWallet } from "../../components/dashboard/overview/overview-crypto-wallet"
+import { EventsOverview } from "../../components/dashboard/overview/overview-events"
 import { OverviewInbox } from "../../components/dashboard/overview/overview-inbox"
-import { OverviewLatestTransactions } from "../../components/dashboard/overview/overview-latest-transactions"
-import { OverviewPrivateWallet } from "../../components/dashboard/overview/overview-private-wallet"
+import { OverviewServing } from "../../components/dashboard/overview/overview-serving"
 import { OverviewTotalBalance } from "../../components/dashboard/overview/overview-total-balance"
 import { OverviewTotalTransactions } from "../../components/dashboard/overview/overview-total-transactions"
 import { ArrowRight as ArrowRightIcon } from "../../icons/arrow-right"
@@ -30,6 +29,7 @@ import { InformationCircleOutlined as InformationCircleOutlinedIcon } from "../.
 import { Reports as ReportsIcon } from "../../icons/reports"
 import { Users as UsersIcon } from "../../icons/users"
 import { gtm } from "../../lib/gtm"
+import { OverviewCampuses } from "src/components/dashboard/overview/overview-campuses"
 
 const Overview: NextPage = () => {
   useEffect(() => {
@@ -60,171 +60,16 @@ const Overview: NextPage = () => {
           </Box>
           <Grid container spacing={4}>
             <Grid item md={6} xs={12}>
-              <OverviewCryptoWallet />
+              <EventsOverview />
             </Grid>
             <Grid item md={6} xs={12}>
-              <OverviewPrivateWallet />
+              <OverviewServing />
             </Grid>
             <Grid item md={12} xs={12}>
-              <OverviewTotalTransactions />
+              <OverviewCampuses />
             </Grid>
-
             <Grid item md={12} xs={12}>
               <OverviewInbox />
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <Card>
-                <CardContent>
-                  <Box
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                    }}
-                  >
-                    <BriefcaseIcon color="primary" fontSize="small" />
-                    <Typography
-                      color="primary.main"
-                      sx={{ pl: 1 }}
-                      variant="subtitle2"
-                    >
-                      Jobs
-                    </Typography>
-                  </Box>
-                  <Typography variant="h6" sx={{ mt: 2 }}>
-                    Find your dream job
-                  </Typography>
-                  <Typography color="textSecondary" variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </Typography>
-                </CardContent>
-                <Divider />
-                <CardActions>
-                  <Button
-                    endIcon={<ArrowRightIcon fontSize="small" />}
-                    size="small"
-                  >
-                    Search Jobs
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <Card>
-                <CardContent>
-                  <Box
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                    }}
-                  >
-                    <InformationCircleOutlinedIcon color="primary" />
-                    <Typography
-                      color="primary.main"
-                      sx={{ pl: 1 }}
-                      variant="subtitle2"
-                    >
-                      Help Center
-                    </Typography>
-                  </Box>
-                  <Typography sx={{ mt: 2 }} variant="h6">
-                    Need help figuring things out?
-                  </Typography>
-                  <Typography color="textSecondary" variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </Typography>
-                </CardContent>
-                <Divider />
-                <CardActions>
-                  <Button
-                    endIcon={<ExternalLinkIcon fontSize="small" />}
-                    size="small"
-                  >
-                    Help Center
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <Card>
-                <CardContent>
-                  <Box
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                    }}
-                  >
-                    <DownloadIcon color="primary" />
-                    <Typography
-                      color="primary.main"
-                      sx={{ pl: 1 }}
-                      variant="subtitle2"
-                    >
-                      Download
-                    </Typography>
-                  </Box>
-                  <Typography sx={{ mt: 2 }} variant="h6">
-                    Download our Free PDF and learn how to get more job leads
-                  </Typography>
-                  <Typography color="textSecondary" variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </Typography>
-                </CardContent>
-                <Divider />
-                <CardActions>
-                  <Button
-                    endIcon={<DownloadIcon fontSize="small" />}
-                    size="small"
-                    variant="outlined"
-                  >
-                    Download Free PDF
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <Card>
-                <CardContent>
-                  <Box
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                    }}
-                  >
-                    <UsersIcon color="primary" />
-                    <Typography
-                      color="primary.main"
-                      sx={{ pl: 1 }}
-                      variant="subtitle2"
-                    >
-                      Contacts
-                    </Typography>
-                  </Box>
-                  <Typography sx={{ mt: 2 }} variant="h6">
-                    Contacts allow you to manage your company contracts
-                  </Typography>
-                  <Typography color="textSecondary" variant="body2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </Typography>
-                </CardContent>
-                <Divider />
-                <CardActions>
-                  <Button
-                    endIcon={<ArrowRightIcon fontSize="small" />}
-                    size="small"
-                    variant="outlined"
-                  >
-                    My Contacts
-                  </Button>
-                </CardActions>
-              </Card>
             </Grid>
           </Grid>
         </Container>
@@ -240,3 +85,11 @@ Overview.getLayout = (page) => (
 )
 
 export default Overview
+
+// this is how you link to a diff page with react next js
+
+{
+  /* <NextLink href={"dashboard/chat"} passHref>
+<Button>Go to chat</Button>
+</NextLink> */
+}

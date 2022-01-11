@@ -71,7 +71,7 @@ const messages: Message[] = [
 
 export const OverviewInbox: FC = (props) => (
   <Card {...props}>
-    <CardHeader title="Inbox" />
+    <CardHeader title="Follow Ups" />
     <Divider />
     <List disablePadding>
       {messages.map((message, index) => (
@@ -123,8 +123,8 @@ export const OverviewInbox: FC = (props) => (
     </List>
     <Divider />
     <CardActions>
-      <NextLink href={"dashboard/chat"} passHref>
-        <Button>Go to chat</Button>
+      <NextLink href={"dashboard/followups"} passHref>
+        <Button variant="contained">Go to Follow Ups</Button>
       </NextLink>
     </CardActions>
   </Card>

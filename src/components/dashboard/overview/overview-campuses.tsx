@@ -1,16 +1,25 @@
 import type { FC } from "react"
 import type { ApexOptions } from "apexcharts"
 import { format } from "date-fns"
-import { Box, Card, CardHeader, Divider } from "@mui/material"
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardHeader,
+  Divider,
+} from "@mui/material"
+import { ArrowRight as ArrowRightIcon } from "../../../icons/arrow-right"
 import { useTheme } from "@mui/material/styles"
 import { Chart } from "../../chart"
 import { Scrollbar } from "../../scrollbar"
+import NextLink from "next/link"
 
 const data = {
   series: [
-    { data: [12, 24, 36, 48, 60, 72, 84] },
-    { data: [12, 24, 36, 48, 60, 72, 84] },
-    { data: [12, 24, 36, 48, 60, 72, 84] },
+    { name: "Events", data: [12, 24, 36, 48, 60, 72, 84] },
+    { name: "SO's", data: [12, 24, 36, 48, 60, 72, 84] },
+    { name: "Follow Ups", data: [12, 24, 36, 48, 60, 72, 84] },
   ],
   categories: [
     "Saddleback en Español",
@@ -23,7 +32,7 @@ const data = {
   ],
 }
 
-export const OverviewTotalTransactions: FC = (props) => {
+export const OverviewCampuses: FC = (props) => {
   const theme = useTheme()
 
   const chartOptions: ApexOptions = {
@@ -125,6 +134,17 @@ export const OverviewTotalTransactions: FC = (props) => {
             type="bar"
           />
         </Box>
+        <Divider />
+        <CardActions>
+          <NextLink href={"dashboard/insights"}>
+            <Button
+              variant="contained"
+              endIcon={<ArrowRightIcon fontSize="small" />}
+            >
+              Go To Insights
+            </Button>
+          </NextLink>
+        </CardActions>
       </Scrollbar>
     </Card>
   )

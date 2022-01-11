@@ -1,6 +1,6 @@
-import type { FC } from 'react';
-import type { ApexOptions } from 'apexcharts';
-import numeral from 'numeral';
+import type { FC } from "react"
+import type { ApexOptions } from "apexcharts"
+import numeral from "numeral"
 import {
   Badge,
   Box,
@@ -13,71 +13,71 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Typography
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { Chart } from '../../chart';
+  Typography,
+} from "@mui/material"
+import { useTheme } from "@mui/material/styles"
+import { Chart } from "../../chart"
 
 const data = {
   series: [
     {
-      color: '#FFB547',
+      color: "#FFB547",
       data: 14859,
-      label: 'Strategy'
+      label: "Ministries",
     },
     {
-      color: '#7BC67E',
+      color: "#7BC67E",
       data: 35690,
-      label: 'Outsourcing'
+      label: "Digital Marketing",
     },
     {
-      color: '#7783DB',
+      color: "#7783DB",
       data: 45120,
-      label: 'Marketing'
+      label: "Local Community",
     },
     {
-      color: '#9DA4DD',
+      color: "#9DA4DD",
       data: 25486,
-      label: 'Other'
-    }
-  ]
-};
+      label: "Referrals",
+    },
+  ],
+}
 
 export const FinanceCostBreakdown: FC = (props) => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const chartOptions: ApexOptions = {
     chart: {
-      background: 'transparent',
+      background: "transparent",
       stacked: false,
       toolbar: {
-        show: false
-      }
+        show: false,
+      },
     },
     colors: data.series.map((item) => item.color),
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     fill: {
-      opacity: 1
+      opacity: 1,
     },
     labels: data.series.map((item) => item.label),
     legend: {
-      show: false
+      show: false,
     },
     stroke: {
-      width: 0
+      width: 0,
     },
     theme: {
-      mode: theme.palette.mode
-    }
-  };
+      mode: theme.palette.mode,
+    },
+  }
 
-  const chartSeries = data.series.map((item) => item.data);
+  const chartSeries = data.series.map((item) => item.data)
 
   return (
     <Card {...props}>
-      <CardHeader title="Cost Breakdown" />
+      <CardHeader title="Source Breakdown" />
       <Divider />
       <CardContent>
         <Chart
@@ -90,12 +90,8 @@ export const FinanceCostBreakdown: FC = (props) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>
-              Top Channels
-            </TableCell>
-            <TableCell align="right">
-              Value
-            </TableCell>
+            <TableCell>Top Channels</TableCell>
+            <TableCell align="right">Value</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -105,31 +101,26 @@ export const FinanceCostBreakdown: FC = (props) => {
                 <Box
                   key={item.label}
                   sx={{
-                    alignItems: 'center',
-                    display: 'flex'
+                    alignItems: "center",
+                    display: "flex",
                   }}
                 >
                   <Box
                     sx={{
                       border: 3,
                       borderColor: item.color,
-                      borderRadius: '50%',
+                      borderRadius: "50%",
                       height: 16,
                       mr: 1,
-                      width: 16
+                      width: 16,
                     }}
                   />
-                  <Typography variant="subtitle2">
-                    {item.label}
-                  </Typography>
+                  <Typography variant="subtitle2">{item.label}</Typography>
                 </Box>
               </TableCell>
               <TableCell align="right">
-                <Typography
-                  color="textSecondary"
-                  variant="body2"
-                >
-                  {numeral(item.data).format('$0,0.00')}
+                <Typography color="textSecondary" variant="body2">
+                  {numeral(item.data).format("$0,0.00")}
                 </Typography>
               </TableCell>
             </TableRow>
@@ -137,5 +128,5 @@ export const FinanceCostBreakdown: FC = (props) => {
         </TableBody>
       </Table>
     </Card>
-  );
-};
+  )
+}

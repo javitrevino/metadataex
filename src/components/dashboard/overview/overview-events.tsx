@@ -13,8 +13,9 @@ import { alpha, useTheme } from "@mui/material/styles"
 import { ArrowRight as ArrowRightIcon } from "../../../icons/arrow-right"
 import { ChevronUp as ChevronUpIcon } from "../../../icons/chevron-up"
 import { Chart } from "../../chart"
+import NextLink from "next/link"
 
-export const OverviewCryptoWallet: FC = (props) => {
+export const EventsOverview: FC = (props) => {
   const theme = useTheme()
 
   const chartOptions: ApexOptions = {
@@ -66,7 +67,7 @@ export const OverviewCryptoWallet: FC = (props) => {
         }}
       >
         <Chart
-          height={160}
+          height={140}
           options={chartOptions}
           series={chartSeries}
           type="radialBar"
@@ -93,29 +94,23 @@ export const OverviewCryptoWallet: FC = (props) => {
               mr: 3,
             }}
           >
-            <Typography color="primary" variant="h4">
-              11 New Events
-            </Typography>
+            <Typography variant="h4">11 Events</Typography>
             <Typography color="textSecondary" sx={{ mt: 1 }} variant="body2">
-              Capacity Status
+              Total Active Events
             </Typography>
           </Box>
-          <Avatar
-            sx={{
-              backgroundColor: alpha(theme.palette.success.main, 0.08),
-              color: "success.main",
-            }}
-            variant="rounded"
-          >
-            <ChevronUpIcon fontSize="small" />
-          </Avatar>
         </Box>
       </Box>
       <Divider />
       <CardActions>
-        <Button endIcon={<ArrowRightIcon fontSize="small" />}>
-          Create Event
-        </Button>
+        <NextLink href={"dashboard/events"}>
+          <Button
+            variant="contained"
+            endIcon={<ArrowRightIcon fontSize="small" />}
+          >
+            Go To Events
+          </Button>
+        </NextLink>
       </CardActions>
     </Card>
   )

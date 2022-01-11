@@ -23,6 +23,7 @@ export const baseThemeOptions: ThemeOptions = {
     MuiButton: {
       defaultProps: {
         disableElevation: true,
+        color: "secondary",
       },
       styleOverrides: {
         root: {

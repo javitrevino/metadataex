@@ -1,5 +1,5 @@
-import type { FC } from 'react';
-import numeral from 'numeral';
+import type { FC } from "react"
+import numeral from "numeral"
 import {
   Box,
   Card,
@@ -10,84 +10,76 @@ import {
   TableHead,
   TableRow,
   Tooltip,
-  Typography
-} from '@mui/material';
-import { ExternalLink as ExternalLinkIcon } from '../../../icons/external-link';
-import { InformationCircleOutlined as InformationCircleOutlinedIcon } from '../../../icons/information-circle-outlined';
-import { Scrollbar } from '../../scrollbar';
+  Typography,
+} from "@mui/material"
+import { ExternalLink as ExternalLinkIcon } from "../../../icons/external-link"
+import { InformationCircleOutlined as InformationCircleOutlinedIcon } from "../../../icons/information-circle-outlined"
+import { Scrollbar } from "../../scrollbar"
 
 interface Page {
-  bounceRate: number;
-  uniqueVisits: number;
-  url: string;
-  visitors: number;
+  bounceRate: number
+  uniqueVisits: number
+  url: string
+  visitors: number
 }
 
 const pages: Page[] = [
   {
     bounceRate: 16,
-    uniqueVisits: 8584,
-    url: '/',
-    visitors: 95847
+    uniqueVisits: 74,
+    url: "https://saddleback.test/events/MenOnTheEdge/2021/registration",
+    visitors: 385,
   },
   {
     bounceRate: 5,
-    uniqueVisits: 648,
-    url: '/authentication/login',
-    visitors: 7500
+    uniqueVisits: 111,
+    url: "https://saddleback.test/events/Christmas/2021/registration",
+    visitors: 3125,
   },
   {
     bounceRate: 2,
-    uniqueVisits: 568,
-    url: '/dashboard',
-    visitors: 85406
+    uniqueVisits: 659,
+    url: "/dashboard",
+    visitors: 4125,
   },
   {
     bounceRate: 12,
-    uniqueVisits: 12322,
-    url: '/blog/top-5-react-frameworks',
-    visitors: 75050
+    uniqueVisits: 547,
+    url: "https://saddleback.test/events/GroceryPickup/2021/registration",
+    visitors: 7500,
   },
   {
     bounceRate: 10,
-    uniqueVisits: 11645,
-    url: '/blog/understand-programming-principles',
-    visitors: 68003
+    uniqueVisits: 127,
+    url: "https://saddleback.test/events/SO/2021/registration",
+    visitors: 5478,
   },
   {
     bounceRate: 8,
-    uniqueVisits: 10259,
-    url: '/blog/design-patterns',
-    visitors: 49510
-  }
-];
+    uniqueVisits: 155,
+    url: "https://saddleback.test/events/Christmas/2020/registration",
+    visitors: 2569,
+  },
+]
 
 export const AnalyticsMostVisited: FC = () => (
   <Card>
     <CardHeader
-      title="Most Visited Pages"
-      action={(
+      title="Most Visited Share Pages"
+      action={
         <Tooltip title="Refresh rate is 24h">
-          <InformationCircleOutlinedIcon sx={{ color: 'action.active' }} />
+          <InformationCircleOutlinedIcon sx={{ color: "action.active" }} />
         </Tooltip>
-      )}
+      }
     />
     <Scrollbar>
       <Table sx={{ minWidth: 600 }}>
         <TableHead>
           <TableRow>
-            <TableCell>
-              Page Name
-            </TableCell>
-            <TableCell>
-              Visitors
-            </TableCell>
-            <TableCell>
-              Unique page visits
-            </TableCell>
-            <TableCell>
-              Bounce rate
-            </TableCell>
+            <TableCell>Page Name</TableCell>
+            <TableCell>Visitors</TableCell>
+            <TableCell>Unique page visits</TableCell>
+            <TableCell>Bounce rate</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -95,46 +87,36 @@ export const AnalyticsMostVisited: FC = () => (
             <TableRow
               key={page.url}
               sx={{
-                '&:last-child td': {
-                  border: 0
-                }
+                "&:last-child td": {
+                  border: 0,
+                },
               }}
             >
               <TableCell>
                 <Box
                   sx={{
-                    alignItems: 'center',
-                    display: 'flex'
+                    alignItems: "center",
+                    display: "flex",
                   }}
                 >
                   <ExternalLinkIcon
                     sx={{
-                      color: 'action.active',
-                      cursor: 'pointer'
+                      color: "action.active",
+                      cursor: "pointer",
                     }}
                   />
-                  <Typography
-                    sx={{ ml: 2 }}
-                    variant="body2"
-                  >
+                  <Typography sx={{ ml: 2 }} variant="body2">
                     {page.url}
                   </Typography>
                 </Box>
               </TableCell>
-              <TableCell>
-                {numeral(page.visitors).format('0,0')}
-              </TableCell>
-              <TableCell>
-                {numeral(page.uniqueVisits).format('0,0')}
-              </TableCell>
-              <TableCell>
-                {page.bounceRate}
-                %
-              </TableCell>
+              <TableCell>{numeral(page.visitors).format("0,0")}</TableCell>
+              <TableCell>{numeral(page.uniqueVisits).format("0,0")}</TableCell>
+              <TableCell>{page.bounceRate}%</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </Scrollbar>
   </Card>
-);
+)

@@ -17,23 +17,24 @@ import { useTheme } from "@mui/material/styles"
 import { ArrowRight as ArrowRightIcon } from "../../../icons/arrow-right"
 import { InformationCircleOutlined as InformationCircleOutlinedIcon } from "../../../icons/information-circle-outlined"
 import { Chart } from "../../chart"
+import NextLink from "next/link"
 
 const data = {
   series: [
     {
       color: "rgba(86, 100, 210, 0.5)",
       data: 10,
-      label: "Linkedin",
+      label: "LinkedIn",
     },
     {
       color: "#FFB547",
       data: 10,
-      label: "Facebook",
+      label: "Paid Ads",
     },
     {
       color: "#7BC67E",
       data: 20,
-      label: "Instagram",
+      label: "Saddleback.com",
     },
     {
       color: "#64B6F7",
@@ -43,7 +44,7 @@ const data = {
     {
       color: "#455a64",
       data: 70,
-      label: "Other",
+      label: "Facebook",
     },
   ],
 }
@@ -120,9 +121,14 @@ export const AnalyticsSocialSources: FC = () => {
       </CardContent>
       <Divider />
       <CardActions>
-        <Button endIcon={<ArrowRightIcon fontSize="small" />}>
-          See all visits
-        </Button>
+        <NextLink href="invoices">
+          <Button
+            variant="contained"
+            endIcon={<ArrowRightIcon fontSize="small" />}
+          >
+            See Interactions
+          </Button>
+        </NextLink>
       </CardActions>
     </Card>
   )

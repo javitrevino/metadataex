@@ -23,7 +23,7 @@ const data = {
       data: [
         3350, 1840, 2254, 5780, 9349, 5241, 2770, 2051, 3764, 2385, 5912, 8323,
       ],
-      name: "Organic / Events",
+      name: "Word-of-mouth",
     },
     {
       color: "#FF9800",
@@ -33,7 +33,7 @@ const data = {
     {
       color: "#0C7CD5",
       data: [100, 122, 50, 300, 250, 400, 312, 200, 10, 60, 90, 400],
-      name: "Social Media / Web",
+      name: "Digital",
     },
   ],
   xaxis: {
@@ -57,9 +57,9 @@ const data = {
 export const AnalyticsTrafficSources: FC<CardProps> = (props) => {
   const theme = useTheme()
   const [selectedSeries, setSelectedSeries] = useState([
-    "Organic / Events",
+    "Word-of-mouth",
     "Family Referral",
-    "Social Media / Web",
+    "Digital",
   ])
 
   const handleChange = (event, name: string): void => {
@@ -175,7 +175,7 @@ export const AnalyticsTrafficSources: FC<CardProps> = (props) => {
 
   return (
     <Card {...props}>
-      <CardHeader title="Traffic Sources" />
+      <CardHeader title="Attendee Sources" />
       <Divider />
       <Box
         sx={{

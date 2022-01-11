@@ -154,10 +154,10 @@ export const AnalyticsGeneralOverview: FC = () => (
         >
           <div>
             <Typography color="textSecondary" variant="body2">
-              Impressions
+              Serving Opps
             </Typography>
             <Typography sx={{ mt: 1 }} variant="h5">
-              1.9M
+              610
             </Typography>
           </div>
           <LineChart />
@@ -183,10 +183,10 @@ export const AnalyticsGeneralOverview: FC = () => (
         >
           <div>
             <Typography color="textSecondary" variant="body2">
-              Spent
+              Events
             </Typography>
             <Typography sx={{ mt: 1 }} variant="h5">
-              $41.2K
+              42
             </Typography>
           </div>
           <LineChart />
@@ -212,10 +212,10 @@ export const AnalyticsGeneralOverview: FC = () => (
         >
           <div>
             <Typography color="textSecondary" variant="body2">
-              Engagements
+              Messages
             </Typography>
             <Typography sx={{ mt: 1 }} variant="h5">
-              36,6K
+              108
             </Typography>
           </div>
           <LineChart />
@@ -244,7 +244,7 @@ export const AnalyticsGeneralOverview: FC = () => (
               Conversions
             </Typography>
             <Typography sx={{ mt: 1 }} variant="h5">
-              131,3K
+              300
             </Typography>
           </div>
           <BarChart />

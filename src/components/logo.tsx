@@ -23,15 +23,15 @@ export const Logo = styled((props: LogoProps) => {
       <g
         id="Toggle-Concept"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="02B---Registration-Email-Mini-Toggle---On"
           transform="translate(-30.000000, -26.000000)"
           fill="#FFFFFF"
-          fill-rule="nonzero"
+          fillRule="nonzero"
         >
           <g id="content" transform="translate(-6.000000, 4.000000)">
             <g

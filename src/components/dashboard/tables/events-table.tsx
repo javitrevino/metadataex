@@ -36,34 +36,34 @@ interface CustomerListTableProps {
   rowsPerPage: number
 }
 
-export const CustomerListTable: FC<CustomerListTableProps> = (props) => {
+export const EventsTable: FC<EventsTableProps> = (props) => {
   const {
-    customers,
-    customersCount,
+    events,
+    eventsCount,
     onPageChange,
     onRowsPerPageChange,
     page,
     rowsPerPage,
     ...other
   } = props
-  const [selectedCustomers, setSelectedCustomers] = useState<string[]>([])
+  const [selectedEvents, setSelectedEvents] = useState<string[]>([])
 
-  // Reset selected customers when customers change
+  // Reset selected events when events change
   useEffect(
     () => {
-      if (selectedCustomers.length) {
-        setSelectedCustomers([])
+      if (selectedEvents.length) {
+        setSelectedEvents([])
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [customers]
+    [events]
   )
 
-  const handleSelectAllCustomers = (
+  const handleSelectAllEvents = (
     event: ChangeEvent<HTMLInputElement>
   ): void => {
-    setSelectedCustomers(
-      event.target.checked ? customers.map((customer) => customer.id) : []
+    setSelectedEvents(
+      event.target.checked ? events.map((event) => event.id) : []
     )
   }
 
@@ -71,19 +71,19 @@ export const CustomerListTable: FC<CustomerListTableProps> = (props) => {
     event: ChangeEvent<HTMLInputElement>,
     customerId: string
   ): void => {
-    if (!selectedCustomers.includes(customerId)) {
-      setSelectedCustomers((prevSelected) => [...prevSelected, customerId])
+    if (!selectedEvents.includes(eventId)) {
+      setSelectedEvents((prevSelected) => [...prevSelected, eventId])
     } else {
-      setSelectedCustomers((prevSelected) =>
-        prevSelected.filter((id) => id !== customerId)
+      setSelectedEvents((prevSelected) =>
+        prevSelected.filter((id) => id !== eventId)
       )
     }
   }
 
-  const enableBulkActions = selectedCustomers.length > 0
-  const selectedSomeCustomers =
-    selectedCustomers.length > 0 && selectedCustomers.length < customers.length
-  const selectedAllCustomers = selectedCustomers.length === customers.length
+  const enableBulkActions = selectedEvents.length > 0
+  const selectedSomeEvents =
+    selectedEvents.length > 0 && selectedEvents.length < events.length
+  const selectedAllCustomers = selectedEvents.length === events.length
 
   return (
     <div {...other}>
@@ -96,9 +96,9 @@ export const CustomerListTable: FC<CustomerListTableProps> = (props) => {
         }}
       >
         <Checkbox
-          checked={selectedAllCustomers}
-          indeterminate={selectedSomeCustomers}
-          onChange={handleSelectAllCustomers}
+          checked={selectedAllEvents}
+          indeterminate={selectedSomeEvents}
+          onChange={handleSelectAllEvents}
         />
         <Button size="small" sx={{ ml: 2 }}>
           Delete
@@ -115,9 +115,9 @@ export const CustomerListTable: FC<CustomerListTableProps> = (props) => {
             <TableRow>
               <TableCell padding="checkbox">
                 <Checkbox
-                  checked={selectedAllCustomers}
-                  indeterminate={selectedSomeCustomers}
-                  onChange={handleSelectAllCustomers}
+                  checked={selectedAllEvents}
+                  indeterminate={selectedSomeEvents}
+                  onChange={handleSelectAllEvents}
                 />
               </TableCell>
               <TableCell>Name</TableCell>

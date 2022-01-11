@@ -35,12 +35,20 @@ import { ShoppingBag as ShoppingBagIcon } from "../../icons/shopping-bag"
 import { ShoppingCart as ShoppingCartIcon } from "../../icons/shopping-cart"
 import { Truck as TruckIcon } from "../../icons/truck"
 import { UserCircle as UserCircleIcon } from "../../icons/user-circle"
+
 import { Users as UsersIcon } from "../../icons/users"
 import { XCircle as XCircleIcon } from "../../icons/x-circle"
 import { Logo } from "../logo"
 import { Scrollbar } from "../scrollbar"
 import { DashboardSidebarSection } from "./dashboard-sidebar-section"
 import { OrganizationPopover } from "./organization-popover"
+import { EventsIcon } from "../custom-icons/EventsIcon"
+import { ServingOppsIcon } from "../custom-icons/ServingOppsIcon"
+import { InsightsIcon } from "../custom-icons/InsightsIcon"
+import { Phone as PhoneIcon } from "../../icons/phone"
+import { CommunicationsIcon } from "../custom-icons/CommunicationsIcon"
+import { DevToolsIcon } from "../custom-icons/DevToolsIcon"
+import { Bell } from "src/icons/bell"
 
 interface DashboardSidebarProps {
   onClose: () => void
@@ -70,169 +78,42 @@ const getSections = (t: TFunction): Section[] => [
         icon: <HomeIcon fontSize="small" />,
       },
       {
-        title: t("Analytics"),
-        path: "/dashboard/analytics",
-        icon: <ChartBarIcon fontSize="small" />,
+        title: t("Events"),
+        path: "/dashboard/events",
+        icon: <EventsIcon fontSize="small" />,
       },
       {
-        title: t("Finance"),
-        path: "/dashboard/finance",
-        icon: <ChartPieIcon fontSize="small" />,
+        title: t("Serving Opps"),
+        path: "/dashboard/serving-opps",
+        icon: <ServingOppsIcon fontSize="small" />,
       },
       {
-        title: t("Logistics"),
-        path: "/dashboard/logistics",
-        icon: <TruckIcon fontSize="small" />,
+        title: t("Insights"),
+        path: "/dashboard/insights",
+        icon: <InsightsIcon fontSize="small" />,
       },
       {
-        title: t("Account"),
-        path: "/dashboard/account",
+        title: t("Follow Ups"),
+        path: "/dashboard/customers",
         icon: <UserCircleIcon fontSize="small" />,
       },
     ],
   },
   {
-    title: t("Management"),
+    title: t("MANAGEMENT"),
     items: [
       {
-        title: t("Customers"),
-        path: "/dashboard/customers",
-        icon: <UsersIcon fontSize="small" />,
-        children: [
-          {
-            title: t("List"),
-            path: "/dashboard/customers",
-          },
-          {
-            title: t("Details"),
-            path: "/dashboard/customers/1",
-          },
-          {
-            title: t("Edit"),
-            path: "/dashboard/customers/1/edit",
-          },
-        ],
-      },
-      {
-        title: t("Products"),
-        path: "/dashboard/products",
-        icon: <ShoppingBagIcon fontSize="small" />,
-        children: [
-          {
-            title: t("List"),
-            path: "/dashboard/products",
-          },
-          {
-            title: t("Create"),
-            path: "/dashboard/products/new",
-          },
-        ],
-      },
-      {
-        title: t("Orders"),
-        icon: <ShoppingCartIcon fontSize="small" />,
-        path: "/dashboard/orders",
-        children: [
-          {
-            title: t("List"),
-            path: "/dashboard/orders",
-          },
-          {
-            title: t("Details"),
-            path: "/dashboard/orders/1",
-          },
-        ],
-      },
-      {
-        title: t("Invoices"),
-        path: "/dashboard/invoices",
-        icon: <ReceiptTaxIcon fontSize="small" />,
-        children: [
-          {
-            title: t("List"),
-            path: "/dashboard/invoices",
-          },
-          {
-            title: t("Details"),
-            path: "/dashboard/invoices/1",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: t("Platforms"),
-    items: [
-      {
-        title: t("Job Listings"),
-        path: "/dashboard/jobs",
-        icon: <OfficeBuildingIcon fontSize="small" />,
-        children: [
-          {
-            title: t("Browse"),
-            path: "/dashboard/jobs",
-          },
-          {
-            title: t("Details"),
-            path: "/dashboard/jobs/companies/1",
-          },
-          {
-            title: t("Create"),
-            path: "/dashboard/jobs/new",
-          },
-        ],
-      },
-      {
-        title: t("Social Media"),
-        path: "/dashboard/social",
-        icon: <ShareIcon fontSize="small" />,
-        children: [
-          {
-            title: t("Profile"),
-            path: "/dashboard/social/profile",
-          },
-          {
-            title: t("Feed"),
-            path: "/dashboard/social/feed",
-          },
-        ],
-      },
-      {
-        title: t("Blog"),
-        path: "/blog",
-        icon: <NewspaperIcon fontSize="small" />,
-        children: [
-          {
-            title: t("Post List"),
-            path: "/blog",
-          },
-          {
-            title: t("Post Details"),
-            path: "/blog/1",
-          },
-          {
-            title: t("Post Create"),
-            path: "/blog/new",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: t("Apps"),
-    items: [
-      {
-        title: t("Kanban"),
+        title: t("Priorities Board"),
         path: "/dashboard/kanban",
         icon: <ClipboardListIcon fontSize="small" />,
       },
       {
-        title: t("Mail"),
-        path: "/dashboard/mail",
+        title: t("Interactions"),
+        path: "/dashboard/invoices",
         icon: <MailIcon fontSize="small" />,
       },
       {
-        title: t("Chat"),
+        title: t("Inbox"),
         path: "/dashboard/chat",
         icon: <ChatAlt2Icon fontSize="small" />,
       },
@@ -244,46 +125,27 @@ const getSections = (t: TFunction): Section[] => [
     ],
   },
   {
-    title: t("Pages"),
+    title: t("UTILS"),
     items: [
       {
-        title: t("Auth"),
-        path: "/authentication",
-        icon: <LockClosedIcon fontSize="small" />,
-        children: [
-          {
-            title: t("Register"),
-            path: "/authentication/register?disableGuard=true",
-          },
-          {
-            title: t("Login"),
-            path: "/authentication/login?disableGuard=true",
-          },
-        ],
+        title: t("Mobile Engagement"),
+        path: "#",
+        icon: <PhoneIcon fontSize="small" />,
       },
       {
-        title: t("Contact"),
-        path: "/contact",
-        icon: <MailOpenIcon fontSize="small" />,
+        title: t("Communications"),
+        path: "#",
+        icon: <CommunicationsIcon fontSize="small" />,
       },
       {
-        title: t("Error"),
-        path: "/error",
-        icon: <XCircleIcon fontSize="small" />,
-        children: [
-          {
-            title: "401",
-            path: "/401",
-          },
-          {
-            title: "404",
-            path: "/404",
-          },
-          {
-            title: "500",
-            path: "/500",
-          },
-        ],
+        title: t("Dev Tools"),
+        icon: <DevToolsIcon fontSize="small" />,
+        path: "#",
+      },
+      {
+        title: t("Notifications"),
+        path: "#",
+        icon: <Bell fontSize="small" />,
       },
     ],
   },
