@@ -22,6 +22,8 @@ import { Download as DownloadIcon } from "../../icons/download"
 import { Reports as ReportsIcon } from "../../icons/reports"
 import { Cog as CogIcon } from "../../icons/cog"
 import { gtm } from "../../lib/gtm"
+import { InsightsTotalEvents } from "src/components/dashboard/insights/insights-total-events"
+import { InsightsTotalSO } from "src/components/dashboard/insights/insights-total-so"
 
 const ServingOpps: NextPage = () => {
   useEffect(() => {
@@ -69,6 +71,9 @@ const ServingOpps: NextPage = () => {
             </Grid>
           </Box>
           <Grid container spacing={4}>
+            <Grid item md={12} xs={12}>
+              <InsightsTotalSO />
+            </Grid>
             <Grid item md={8} xs={12}>
               <FinanceSalesRevenue />
             </Grid>

@@ -20,6 +20,7 @@ import { AnalyticsTrafficSources } from "../../components/dashboard/analytics/an
 import { Reports as ReportsIcon } from "../../icons/reports"
 import { gtm } from "../../lib/gtm"
 import { CustomerListTable } from "src/components/dashboard/customer/customer-list-table"
+import { InsightsTotalEvents } from "src/components/dashboard/insights/insights-total-events"
 
 const Events: NextPage = () => {
   useEffect(() => {
@@ -70,14 +71,14 @@ const Events: NextPage = () => {
           <Box sx={{ mt: 4 }}>
             <Grid container spacing={4}>
               <Grid item md={12} xs={12}>
+                <InsightsTotalEvents />
+              </Grid>
+              <Grid item md={12} xs={12}>
                 <AnalyticsTrafficSources sx={{ height: "100%" }} />
               </Grid>
 
-              <Grid item md={8} xs={12}>
+              <Grid item md={12} xs={12}>
                 <AnalyticsMostVisited />
-              </Grid>
-              <Grid item md={4} xs={12}>
-                <AnalyticsSocialSources />
               </Grid>
             </Grid>
           </Box>

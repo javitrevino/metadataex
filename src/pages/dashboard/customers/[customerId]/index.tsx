@@ -33,11 +33,7 @@ import { gtm } from "../../../../lib/gtm"
 import type { Customer } from "../../../../types/customer"
 import { getInitials } from "../../../../utils/get-initials"
 
-const tabs = [
-  { label: "Details", value: "details" },
-  { label: "Invoices", value: "invoices" },
-  { label: "Logs", value: "logs" },
-]
+const tabs = [{ label: "Details", value: "details" }]
 
 const CustomerDetails: NextPage = () => {
   const isMounted = useMounted()
@@ -186,19 +182,8 @@ const CustomerDetails: NextPage = () => {
                     state={customer.state}
                   />
                 </Grid>
-                <Grid item xs={12}>
-                  <CustomerPayment />
-                </Grid>
-                <Grid item xs={12}>
-                  <CustomerEmailsSummary />
-                </Grid>
-                <Grid item xs={12}>
-                  <CustomerDataManagement />
-                </Grid>
               </Grid>
             )}
-            {currentTab === "invoices" && <CustomerInvoices />}
-            {currentTab === "logs" && <CustomerLogs />}
           </Box>
         </Container>
       </Box>

@@ -2,8 +2,11 @@ import type { FC } from "react"
 import {
   Avatar,
   Box,
+  Button,
   Card,
+  CardActions,
   CardHeader,
+  Divider,
   LinearProgress,
   Table,
   TableBody,
@@ -13,6 +16,9 @@ import {
   Typography,
 } from "@mui/material"
 import { Truck as TruckIcon } from "../../../icons/truck"
+import NextLink from "next/link"
+import { ArrowRight as ArrowRightIcon } from "../../../icons/arrow-right"
+
 import { Scrollbar } from "../../scrollbar"
 import { SeverityPill } from "../../severity-pill"
 
@@ -65,7 +71,7 @@ const vehicles: Vehicle[] = [
 
 export const InsightsPriorities: FC = () => (
   <Card>
-    <CardHeader title="Ministry Priorities" subheader="Goals Overview" />
+    <CardHeader title="Priorities" subheader="From your Board" />
     <Scrollbar>
       <Box sx={{ minWidth: 1200 }}>
         <Table>
@@ -134,6 +140,17 @@ export const InsightsPriorities: FC = () => (
           </TableBody>
         </Table>
       </Box>
+      <Divider />
+      <CardActions>
+        <NextLink href={"kanban"}>
+          <Button
+            variant="contained"
+            endIcon={<ArrowRightIcon fontSize="small" />}
+          >
+            Go To Board
+          </Button>
+        </NextLink>
+      </CardActions>
     </Scrollbar>
   </Card>
 )

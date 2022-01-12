@@ -4,15 +4,17 @@ import Head from "next/head"
 import { Box, Button, Container, Grid, Typography } from "@mui/material"
 import { AuthGuard } from "../../components/authentication/auth-guard"
 import { DashboardLayout } from "../../components/dashboard/dashboard-layout"
-import { LogisticsOverview } from "../../components/dashboard/logistics/logistics-overview"
-import { InsightsTotalEvents } from "../../components/dashboard/logistics/insights-total-events"
-import { InsightsItemMetrics } from "../../components/dashboard/logistics/insights-item-metrics"
-import { InsightsPriorities } from "../../components/dashboard/logistics/insights-priorities"
+import { LogisticsOverview } from "../../components/dashboard/insights/logistics-overview"
+import { InsightsTotalEvents } from "../../components/dashboard/insights/insights-total-events"
+import { InsightsItemMetrics } from "../../components/dashboard/insights/insights-item-metrics"
+import { InsightsPriorities } from "../../components/dashboard/insights/insights-priorities"
 import { Cog as CogIcon } from "../../icons/cog"
 import { Download as DownloadIcon } from "../../icons/download"
 import { Reports as ReportsIcon } from "../../icons/reports"
 import { gtm } from "../../lib/gtm"
 import { FinanceSalesByContinent } from "src/components/dashboard/finance/finance-sales-by-continent"
+import { AnalyticsSocialSources } from "src/components/dashboard/analytics/analytics-social-sources"
+import { OverviewCampuses } from "src/components/dashboard/overview/overview-campuses"
 
 const Logistics: NextPage = () => {
   useEffect(() => {
@@ -22,7 +24,7 @@ const Logistics: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Logistics | Material Kit Pro</title>
+        <title>Ministry Management | Insights</title>
       </Head>
       <Box
         component="main"
@@ -59,15 +61,18 @@ const Logistics: NextPage = () => {
 
           <Box sx={{ mt: 4 }}>
             <Grid container spacing={4}>
-              <Grid item xl={6} xs={12}>
+              <Grid item xl={12} xs={12}>
                 <InsightsItemMetrics />
-              </Grid>
-              <Grid item xl={6} xs={12}>
-                <InsightsTotalEvents />
               </Grid>
 
               <Grid item xs={12}>
                 <InsightsPriorities />
+              </Grid>
+              <Grid item md={4} xs={12}>
+                <AnalyticsSocialSources />
+              </Grid>
+              <Grid item md={8} xs={12}>
+                <OverviewCampuses />
               </Grid>
             </Grid>
           </Box>

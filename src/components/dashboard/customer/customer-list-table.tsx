@@ -122,8 +122,7 @@ export const CustomerListTable: FC<CustomerListTableProps> = (props) => {
               </TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Location</TableCell>
-              <TableCell>Orders</TableCell>
-              <TableCell>Spent</TableCell>
+
               <TableCell align="right">Actions</TableCell>
             </TableRow>
           </TableHead>
@@ -173,14 +172,7 @@ export const CustomerListTable: FC<CustomerListTableProps> = (props) => {
                   <TableCell>
                     {`${customer.city}, ${customer.state}, ${customer.country}`}
                   </TableCell>
-                  <TableCell>{customer.totalOrders}</TableCell>
-                  <TableCell>
-                    <Typography color="success.main" variant="subtitle2">
-                      {numeral(customer.totalAmountSpent).format(
-                        `${customer.currency}0,0.00`
-                      )}
-                    </Typography>
-                  </TableCell>
+
                   <TableCell align="right">
                     <NextLink href="/dashboard/customers/1/edit" passHref>
                       <IconButton component="a">

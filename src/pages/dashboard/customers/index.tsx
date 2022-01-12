@@ -47,15 +47,15 @@ const tabs = [
     value: "all",
   },
   {
-    label: "Accepts Marketing",
+    label: "Healthy Church",
     value: "hasAcceptedMarketing",
   },
   {
-    label: "Prospect",
+    label: "Campus Leaders",
     value: "isProspect",
   },
   {
-    label: "Returning",
+    label: "Volunteers",
     value: "isReturning",
   },
 ]
@@ -334,7 +334,7 @@ const CustomerList: NextPage = () => {
                       </InputAdornment>
                     ),
                   }}
-                  placeholder="Search customers"
+                  placeholder="Search Follow Ups"
                 />
               </Box>
               <TextField

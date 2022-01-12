@@ -20,7 +20,6 @@ import { EventsOverview } from "../../components/dashboard/overview/overview-eve
 import { OverviewInbox } from "../../components/dashboard/overview/overview-inbox"
 import { OverviewServing } from "../../components/dashboard/overview/overview-serving"
 import { OverviewTotalBalance } from "../../components/dashboard/overview/overview-total-balance"
-import { OverviewTotalTransactions } from "../../components/dashboard/overview/overview-total-transactions"
 import { ArrowRight as ArrowRightIcon } from "../../icons/arrow-right"
 import { Briefcase as BriefcaseIcon } from "../../icons/briefcase"
 import { Download as DownloadIcon } from "../../icons/download"
@@ -65,6 +64,7 @@ const Overview: NextPage = () => {
             <Grid item md={6} xs={12}>
               <OverviewServing />
             </Grid>
+
             <Grid item md={12} xs={12}>
               <OverviewCampuses />
             </Grid>

@@ -49,6 +49,7 @@ import { Phone as PhoneIcon } from "../../icons/phone"
 import { CommunicationsIcon } from "../custom-icons/CommunicationsIcon"
 import { DevToolsIcon } from "../custom-icons/DevToolsIcon"
 import { Bell } from "src/icons/bell"
+import { SortDescending } from "src/icons/sort-descending"
 
 interface DashboardSidebarProps {
   onClose: () => void
@@ -103,24 +104,20 @@ const getSections = (t: TFunction): Section[] => [
     title: t("MANAGEMENT"),
     items: [
       {
-        title: t("Priorities Board"),
-        path: "/dashboard/kanban",
-        icon: <ClipboardListIcon fontSize="small" />,
-      },
-      {
         title: t("Interactions"),
         path: "/dashboard/invoices",
-        icon: <MailIcon fontSize="small" />,
+        icon: <SortDescending fontSize="small" />,
       },
-      {
-        title: t("Inbox"),
-        path: "/dashboard/chat",
-        icon: <ChatAlt2Icon fontSize="small" />,
-      },
+
       {
         title: t("Calendar"),
         path: "/dashboard/calendar",
         icon: <CalendarIcon fontSize="small" />,
+      },
+      {
+        title: t("Board"),
+        path: "/dashboard/kanban",
+        icon: <ClipboardListIcon fontSize="small" />,
       },
     ],
   },

@@ -1,24 +1,17 @@
-import type { FC } from 'react';
-import { Box, Button, Grid, Switch, TextField, Typography } from '@mui/material';
+import type { FC } from "react"
+import { Box, Button, Grid, Switch, TextField, Typography } from "@mui/material"
 
 export const Form1: FC = () => (
   <Box
     sx={{
-      backgroundColor: 'background.paper',
-      minHeight: '100%',
-      p: 3
+      backgroundColor: "background.paper",
+      minHeight: "100%",
+      p: 3,
     }}
   >
     <form onSubmit={(event) => event.preventDefault()}>
-      <Grid
-        container
-        spacing={3}
-      >
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
+      <Grid container spacing={3}>
+        <Grid item md={6} xs={12}>
           <TextField
             fullWidth
             label="Full name"
@@ -27,11 +20,7 @@ export const Form1: FC = () => (
             value="Miron Vitold"
           />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
+        <Grid item md={6} xs={12}>
           <TextField
             fullWidth
             label="Email address"
@@ -40,23 +29,10 @@ export const Form1: FC = () => (
             value="miron.vitold@devias.io"
           />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
-          <TextField
-            fullWidth
-            label="Country"
-            name="country"
-            value="USA"
-          />
+        <Grid item md={6} xs={12}>
+          <TextField fullWidth label="Country" name="country" value="USA" />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
+        <Grid item md={6} xs={12}>
           <TextField
             fullWidth
             label="State/Region"
@@ -64,11 +40,7 @@ export const Form1: FC = () => (
             value="New York"
           />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
+        <Grid item md={6} xs={12}>
           <TextField
             fullWidth
             label="Address 1"
@@ -76,11 +48,7 @@ export const Form1: FC = () => (
             value="Street John Wick, no. 7"
           />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
+        <Grid item md={6} xs={12}>
           <TextField
             fullWidth
             label="Address 2"
@@ -88,11 +56,7 @@ export const Form1: FC = () => (
             value="House #25"
           />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
+        <Grid item md={6} xs={12}>
           <TextField
             fullWidth
             label="Phone number"
@@ -101,45 +65,20 @@ export const Form1: FC = () => (
           />
         </Grid>
         <Grid item />
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
-          <Typography
-            gutterBottom
-            variant="subtitle2"
-          >
+        <Grid item md={6} xs={12}>
+          <Typography gutterBottom variant="subtitle2">
             Email Verified
           </Typography>
-          <Typography
-            color="textSecondary"
-            variant="body2"
-          >
-            Disabling this will automatically send the user a verification
-            email
+          <Typography color="textSecondary" variant="body2">
+            Disabling this will automatically send the user a verification email
           </Typography>
-          <Switch
-            defaultChecked
-            edge="start"
-            name="isVerified"
-          />
+          <Switch defaultChecked edge="start" name="isVerified" />
         </Grid>
-        <Grid
-          item
-          md={6}
-          xs={12}
-        >
-          <Typography
-            gutterBottom
-            variant="subtitle2"
-          >
+        <Grid item md={6} xs={12}>
+          <Typography gutterBottom variant="subtitle2">
             Discounted Prices
           </Typography>
-          <Typography
-            color="textSecondary"
-            variant="body2"
-          >
+          <Typography color="textSecondary" variant="body2">
             This will give the user discounted prices for all products
           </Typography>
           <Switch
@@ -151,13 +90,10 @@ export const Form1: FC = () => (
         </Grid>
       </Grid>
       <Box sx={{ mt: 2 }}>
-        <Button
-          type="submit"
-          variant="contained"
-        >
+        <Button type="submit" variant="contained">
           Update Customer
         </Button>
       </Box>
     </form>
   </Box>
-);
+)

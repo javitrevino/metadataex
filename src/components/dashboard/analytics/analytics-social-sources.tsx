@@ -83,7 +83,7 @@ export const AnalyticsSocialSources: FC = () => {
 
   return (
     <Card>
-      <CardHeader title="Social Media Sources" />
+      <CardHeader title="Contribution Sources" />
       <Divider />
       <CardContent>
         <Chart

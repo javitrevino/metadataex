@@ -123,7 +123,7 @@ export const OverviewInbox: FC = (props) => (
     </List>
     <Divider />
     <CardActions>
-      <NextLink href={"dashboard/followups"} passHref>
+      <NextLink href={"dashboard/customers"} passHref>
         <Button variant="contained">Go to Follow Ups</Button>
       </NextLink>
     </CardActions>
