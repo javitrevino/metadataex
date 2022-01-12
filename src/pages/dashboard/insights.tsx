@@ -64,7 +64,6 @@ const Logistics: NextPage = () => {
               <Grid item xl={12} xs={12}>
                 <InsightsItemMetrics />
               </Grid>
-
               <Grid item xs={12}>
                 <InsightsPriorities />
               </Grid>

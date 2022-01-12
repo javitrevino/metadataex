@@ -26,7 +26,7 @@ export const OverviewServing: FC = (props) => {
         show: false,
       },
     },
-    colors: [theme.palette.secondary.light],
+    colors: ["#56C4C4"],
     fill: {
       opacity: 1,
     },
@@ -40,7 +40,7 @@ export const OverviewServing: FC = (props) => {
           size: "40%",
         },
         track: {
-          background: theme.palette.secondary.dark,
+          background: "#329594",
         },
       },
     },

@@ -26,7 +26,7 @@ export const EventsOverview: FC = (props) => {
         show: false,
       },
     },
-    colors: [theme.palette.primary.light],
+    colors: ["#00AEEF"],
     fill: {
       opacity: 1,
     },
@@ -40,7 +40,7 @@ export const EventsOverview: FC = (props) => {
           size: "40%",
         },
         track: {
-          background: theme.palette.primary.dark,
+          background: "#1C93C4",
         },
       },
     },
