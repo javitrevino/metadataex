@@ -38,7 +38,7 @@ const Overview: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Overview | Healhty Church </title>
+        <title>Overview | Ministry Management </title>
       </Head>
       <Box
         component="main"
@@ -48,15 +48,6 @@ const Overview: NextPage = () => {
         }}
       >
         <Container maxWidth="xl">
-          <Box sx={{ mb: 4 }}>
-            <Grid container justifyContent="space-between" spacing={3}>
-              <Grid item>
-                <Typography variant="h4">
-                  Hey Anika, let’s get started!
-                </Typography>
-              </Grid>
-            </Grid>
-          </Box>
           <Grid container spacing={4}>
             <Grid item md={6} xs={12}>
               <EventsOverview />

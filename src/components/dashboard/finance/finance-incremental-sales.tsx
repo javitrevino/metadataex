@@ -21,29 +21,29 @@ import { Chart } from "../../chart"
 const data = {
   series: [
     {
-      color: "#2F3EB1",
+      color: "#00254D",
       category: "Rancho Capistrano",
-      data: 37530,
+      data: 3753,
     },
     {
-      color: "#7BC67E",
+      color: "#54CC86",
       category: "Saddleback En Español",
-      data: 52717,
+      data: 5271,
     },
     {
-      color: "#FFB547",
+      color: "#F99E49",
       category: "Lake Forest",
-      data: 62935,
+      data: 6293,
     },
     {
-      color: "#9DA4DD",
+      color: "#C68EF6",
       category: "San Clemente",
-      data: 90590,
+      data: 1059,
     },
     {
-      color: "#0C7CD5",
+      color: "#00AEEF",
       category: "Los Angeles",
-      data: 13219,
+      data: 1321,
     },
   ],
 }
@@ -113,13 +113,13 @@ export const FinanceIncrementalSales: FC = (props) => {
   const chartSeries = [
     {
       data: data.series.map((item) => item.data),
-      name: "Sales",
+      name: "Instances",
     },
   ]
 
   return (
     <Card {...props}>
-      <CardHeader title="Campus SO Performance" />
+      <CardHeader title="Campus SO Visits" />
       <Divider />
       <CardContent>
         <Chart
@@ -132,7 +132,7 @@ export const FinanceIncrementalSales: FC = (props) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Label</TableCell>
+            <TableCell>Campus Label</TableCell>
             <TableCell align="right">Value</TableCell>
           </TableRow>
         </TableHead>

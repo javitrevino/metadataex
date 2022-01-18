@@ -6,19 +6,19 @@ import { Chart } from "../../chart"
 
 const items = [
   {
-    color: "#4CAF50",
+    color: "#54CC86",
     label: "Events",
     subtitle: "Excellent",
     value: 85,
   },
   {
-    color: "#FF9800",
+    color: "#F99E49",
     label: "Serving Opps",
     subtitle: "Fair condition",
     value: 50,
   },
   {
-    color: "#F44336",
+    color: "#ED4335",
     label: "Digital Reach ",
     subtitle: "Needs attention",
     value: 19,

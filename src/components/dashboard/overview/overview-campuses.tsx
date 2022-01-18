@@ -43,7 +43,7 @@ export const OverviewCampuses: FC = (props) => {
         show: false,
       },
     },
-    colors: ["#6E7AD8", "#4655CE", "#2F3EB1"],
+    colors: ["#763FA5", "#9958D1", "#C68EF6"],
     dataLabels: {
       enabled: false,
     },

@@ -9,6 +9,9 @@ import {
   Divider,
   Typography,
 } from "@mui/material"
+import { ArrowRight as ArrowRightIcon } from "../../../icons/arrow-right"
+
+import NextLink from "next/link"
 
 interface OverviewBannerProps {
   onDismiss?: () => void

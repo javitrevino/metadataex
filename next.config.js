@@ -1,12 +1,12 @@
 // Remove this if you're not using Fullcalendar features
-const withTM = require('next-transpile-modules')([
-  '@fullcalendar/common',
-  '@fullcalendar/react',
-  '@fullcalendar/daygrid',
-  '@fullcalendar/list',
-  '@fullcalendar/timegrid',
-  '@fullcalendar/timeline'
-]);
+const withTM = require("next-transpile-modules")([
+  "@fullcalendar/common",
+  "@fullcalendar/react",
+  "@fullcalendar/daygrid",
+  "@fullcalendar/list",
+  "@fullcalendar/timegrid",
+  "@fullcalendar/timeline",
+])
 
 module.exports = withTM({
   reactStrictMode: true,
@@ -16,22 +16,29 @@ module.exports = withTM({
       issuer: { and: [/\.(js|ts|md)x?$/] },
       use: [
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
-            svgoConfig: { plugins: [{ removeViewBox: false }] }
-          }
-        }
-      ]
-    });
-    return config;
+            svgoConfig: { plugins: [{ removeViewBox: false }] },
+          },
+        },
+      ],
+    })
+    return config
   },
   async redirects() {
     return [
       {
-        source: '/docs',
-        destination: '/docs/welcome',
-        permanent: true
-      }
-    ];
-  }
-});
+        source: "/",
+        destination: "/dashboard",
+        permanent: true,
+      },
+    ]
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+})

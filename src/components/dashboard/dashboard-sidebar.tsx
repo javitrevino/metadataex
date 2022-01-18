@@ -104,20 +104,20 @@ const getSections = (t: TFunction): Section[] => [
     title: t("MANAGEMENT"),
     items: [
       {
-        title: t("Interactions"),
+        title: t("Contributions"),
         path: "/dashboard/invoices",
         icon: <SortDescending fontSize="small" />,
       },
-
-      {
-        title: t("Calendar"),
-        path: "/dashboard/calendar",
-        icon: <CalendarIcon fontSize="small" />,
-      },
+      ,
       {
         title: t("Board"),
         path: "/dashboard/kanban",
         icon: <ClipboardListIcon fontSize="small" />,
+      },
+      {
+        title: t("Calendar"),
+        path: "#",
+        icon: <CalendarIcon fontSize="small" />,
       },
     ],
   },

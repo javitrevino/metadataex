@@ -17,17 +17,17 @@ import { Chart } from "../../chart"
 const data = {
   series: [
     {
-      color: "#688eff",
+      color: "#134174",
       data: 38,
       label: "One Time",
     },
     {
-      color: "#4CAF50",
+      color: "#54CC86",
       data: 50,
       label: "Recurring",
     },
     {
-      color: "#FF9800",
+      color: "#F99E49",
       data: 12,
       label: "Online Events",
     },

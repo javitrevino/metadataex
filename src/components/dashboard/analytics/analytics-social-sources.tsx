@@ -22,22 +22,22 @@ import NextLink from "next/link"
 const data = {
   series: [
     {
-      color: "rgba(86, 100, 210, 0.5)",
-      data: 10,
+      color: "#97A4AB",
+      data: 4,
       label: "LinkedIn",
     },
     {
-      color: "#FFB547",
+      color: "#C96D20",
       data: 10,
       label: "Paid Ads",
     },
     {
-      color: "#7BC67E",
+      color: "#3A8E5D",
       data: 20,
       label: "Saddleback.com",
     },
     {
-      color: "#64B6F7",
+      color: "#1C93C4",
       data: 10,
       label: "Twitter",
     },

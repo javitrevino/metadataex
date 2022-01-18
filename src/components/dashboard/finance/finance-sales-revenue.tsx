@@ -16,7 +16,7 @@ export const FinanceSalesRevenue: FC<CardProps> = (props) => {
         show: false,
       },
     },
-    colors: ["#2F3EB1", "#6E7AD8"],
+    colors: ["#329594", "#56C4C4"],
     dataLabels: {
       enabled: false,
     },

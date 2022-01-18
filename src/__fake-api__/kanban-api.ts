@@ -49,8 +49,8 @@ let board: Board = {
         "Duis condimentum lacus finibus felis pellentesque, ac auctor nibh fermentum. Duis sed dui ante. Phasellus id eros tincidunt, dictum lorem vitae, pellentesque sem. Aenean eu enim sit amet mauris rhoncus mollis. Sed enim turpis, porta a felis et, luctus faucibus nisi. Phasellus et metus fermentum, ultrices arcu aliquam, facilisis justo. Cras nunc nunc, elementum sed euismod ut, maximus eget nibh. Phasellus condimentum lorem neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce sagittis pharetra eleifend. Suspendisse potenti.",
       due: addDays(now, 7).getTime(),
       isSubscribed: false,
-      labels: ["Business", "Design"],
-      memberIds: ["5e86809283e28b96d2d38537"],
+      labels: [],
+      memberIds: [],
       name: "New Social Media Strategy",
     },
     {
@@ -61,12 +61,12 @@ let board: Board = {
       comments: [],
       cover: null,
       description:
-        "We are looking for vue experience and of course node js strong knowledge",
+        "We are looking for mega-church experience and strong leadership and managerial knowledge",
       due: addDays(now, 6).getTime(),
       isSubscribed: true,
       labels: [],
-      memberIds: ["5e887b209c28ac3dd97f6db5", "5e887a62195cc5aef7e8ca5d"],
-      name: "Interview for the Asis. Sales Manager",
+      memberIds: [],
+      name: "Interview for the Church Manager",
     },
     {
       id: "5e849c977ef6265938bfd90b",
@@ -76,12 +76,12 @@ let board: Board = {
       comments: [],
       cover: null,
       description:
-        "We need to make it aggressive with pricing because it’s in their interest to acquire us",
+        "We need to come up with something more cohesive with our existing brand and UI",
       due: null,
       isSubscribed: false,
       labels: [],
       memberIds: [],
-      name: "Change the height of the top bar because it looks too chunky",
+      name: "Change the look and feel of email newsletters",
     },
     {
       id: "5e849c9e34ee93bc7255c599",
@@ -90,12 +90,11 @@ let board: Board = {
       columnId: "5e849c39325dc5ef58e5a5db",
       comments: [],
       cover: null,
-      description:
-        "We need to make it aggressive with pricing because it’s in their interest to acquire us",
+      description: "Post COVID relief, 2022 community strategy and goals",
       due: null,
       isSubscribed: false,
       labels: [],
-      memberIds: ["5e887ac47eed253091be10cb", "5e86809283e28b96d2d38537"],
+      memberIds: [],
       name: "2022 Community Goals",
     },
     {
@@ -110,7 +109,7 @@ let board: Board = {
       due: null,
       isSubscribed: true,
       labels: [],
-      memberIds: ["5e887a62195cc5aef7e8ca5d"],
+      memberIds: [],
       name: "CMS First Release ",
     },
 

@@ -30,7 +30,7 @@ const Events: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Analytics | Healthy Church</title>
+        <title>Analytics | Ministry Management</title>
       </Head>
       <Box
         component="main"

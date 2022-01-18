@@ -19,19 +19,19 @@ import { Chart } from "../../chart"
 const data = {
   series: [
     {
-      color: "#4CAF50",
+      color: "#6DCFF6",
       data: [
         3350, 1840, 2254, 5780, 9349, 5241, 2770, 2051, 3764, 2385, 5912, 8323,
       ],
       name: "Word-of-mouth",
     },
     {
-      color: "#FF9800",
+      color: "#3A8E5D",
       data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35],
       name: "Family Referral",
     },
     {
-      color: "#0C7CD5",
+      color: "#EB4EA1",
       data: [100, 122, 50, 300, 250, 400, 312, 200, 10, 60, 90, 400],
       name: "Digital",
     },

@@ -36,7 +36,7 @@ const secondary = {
 }
 
 const success = {
-  main: "#14B8A6",
+  main: "#54CC86",
   light: "#43C6B7",
   dark: "#0E8074",
   contrastText: "#FFFFFF",
@@ -50,14 +50,14 @@ const info = {
 }
 
 const warning = {
-  main: "#FFB020",
+  main: "#F99E49",
   light: "#FFBF4C",
   dark: "#B27B16",
   contrastText: "#FFFFFF",
 }
 
 const error = {
-  main: "#D14343",
+  main: "#ED4335",
   light: "#DA6868",
   dark: "#922E2E",
   contrastText: "#FFFFFF",

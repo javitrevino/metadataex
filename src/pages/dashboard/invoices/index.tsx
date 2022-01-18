@@ -212,7 +212,7 @@ const InvoiceList: NextPage = () => {
           <Box sx={{ mb: 3 }}>
             <Grid container spacing={3} justifyContent="space-between">
               <Grid item>
-                <Typography variant="h4">Invoices</Typography>
+                <Typography variant="h4">Contributions</Typography>
               </Grid>
               <Grid item sx={{ m: -1 }}>
                 <Button
@@ -238,17 +238,9 @@ const InvoiceList: NextPage = () => {
                 justifyContent: "flex-end",
                 mt: 3,
               }}
-            >
-              <FormControlLabel
-                control={
-                  <Switch checked={group} onChange={handleChangeGroup} />
-                }
-                label="Show groups"
-              />
-            </Box>
+            ></Box>
           </Box>
           <InvoiceListTable
-            group={group}
             invoices={paginatedInvoices}
             invoicesCount={filteredInvoices.length}
             onPageChange={handlePageChange}

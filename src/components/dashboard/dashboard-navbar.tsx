@@ -91,7 +91,7 @@ const ContactsButton = () => {
   return (
     <>
       <Tooltip title="Contacts">
-        <IconButton onClick={handleOpenPopover} sx={{ ml: 1 }} ref={anchorRef}>
+        <IconButton sx={{ ml: 1 }} ref={anchorRef}>
           <UsersIcon fontSize="small" />
         </IconButton>
       </Tooltip>
@@ -229,7 +229,7 @@ export const DashboardNavbar: FC<DashboardNavbarProps> = (props) => {
           <Box sx={{ flexGrow: 1 }} />
 
           <ContentSearchButton />
-          <ContactsButton />
+
           <NotificationsButton />
           <AccountButton />
         </Toolbar>

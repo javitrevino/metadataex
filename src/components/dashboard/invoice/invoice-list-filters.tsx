@@ -175,7 +175,7 @@ export const InvoiceListFilters: FC<InvoiceListFiltersProps> = (props) => {
             ),
           }}
           label="Search"
-          placeholder="Search by invoice number"
+          placeholder="Search by Name"
         />
       </Box>
       <Typography color="textSecondary" sx={{ mt: 3 }} variant="subtitle2">
@@ -198,7 +198,7 @@ export const InvoiceListFilters: FC<InvoiceListFiltersProps> = (props) => {
         />
       </Stack>
       <Typography color="textSecondary" sx={{ mt: 3 }} variant="subtitle2">
-        From customer
+        Initial Source
       </Typography>
       <Box
         sx={{
@@ -231,12 +231,6 @@ export const InvoiceListFilters: FC<InvoiceListFiltersProps> = (props) => {
           </FormGroup>
         </Scrollbar>
       </Box>
-      <FormControlLabel
-        control={<Switch checked={filters.status === "paid"} />}
-        label="Show paid only"
-        onChange={handleStatusChange}
-        sx={{ mt: 2 }}
-      />
     </Box>
   )
 

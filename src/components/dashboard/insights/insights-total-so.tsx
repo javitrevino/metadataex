@@ -17,19 +17,19 @@ import { Chart } from "../../chart"
 const data = {
   series: [
     {
-      color: "#688eff",
-      data: 38,
+      color: "#134174",
+      data: 60,
       label: "One Time",
     },
     {
-      color: "#4CAF50",
-      data: 50,
+      color: "#54CC86",
+      data: 40,
       label: "Recurring",
     },
     {
-      color: "#FF9800",
-      data: 12,
-      label: "Online Events",
+      color: "#F99E49",
+      data: 20,
+      label: "Online Serving Opps",
     },
   ],
 }
@@ -81,7 +81,7 @@ export const InsightsTotalSO: FC = (props) => {
           <Typography color="textSecondary" variant="body2">
             Total
           </Typography>
-          <Typography variant="h5">100</Typography>
+          <Typography variant="h5">120</Typography>
           <Divider sx={{ mt: 1 }} />
           <List disablePadding>
             {data.series.map((item, index) => (

@@ -21,23 +21,23 @@ import { Chart } from "../../chart"
 const data = {
   series: [
     {
-      color: "#FFB547",
-      data: 14859,
+      color: "#F99E49",
+      data: 40,
       label: "Ministries",
     },
     {
-      color: "#7BC67E",
-      data: 35690,
+      color: "#EB4EA1",
+      data: 40,
       label: "Digital Marketing",
     },
     {
-      color: "#7783DB",
-      data: 45120,
+      color: "#6DCFF6",
+      data: 30,
       label: "Local Community",
     },
     {
-      color: "#9DA4DD",
-      data: 25486,
+      color: "#54CC86",
+      data: 10,
       label: "Referrals",
     },
   ],
@@ -120,7 +120,7 @@ export const FinanceCostBreakdown: FC = (props) => {
               </TableCell>
               <TableCell align="right">
                 <Typography color="textSecondary" variant="body2">
-                  {numeral(item.data).format("$0,0.00")}
+                  {item.data}
                 </Typography>
               </TableCell>
             </TableRow>
