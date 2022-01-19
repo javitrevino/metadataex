@@ -77,7 +77,7 @@ export const InsightsTotalSO: FC = (props) => {
             type="radialBar"
           />
         </Grid>
-        <Grid item md={6} xs={12}>
+        <Grid item md={4} xs={12}>
           <Typography color="textSecondary" variant="body2">
             Total
           </Typography>

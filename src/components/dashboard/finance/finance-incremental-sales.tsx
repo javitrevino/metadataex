@@ -23,27 +23,27 @@ const data = {
     {
       color: "#00254D",
       category: "Rancho Capistrano",
-      data: 3753,
+      data: 7120,
     },
     {
       color: "#54CC86",
       category: "Saddleback En Español",
-      data: 5271,
+      data: 2120,
     },
     {
       color: "#F99E49",
       category: "Lake Forest",
-      data: 6293,
+      data: 11120,
     },
     {
       color: "#C68EF6",
       category: "San Clemente",
-      data: 1059,
+      data: 620,
     },
     {
       color: "#00AEEF",
       category: "Los Angeles",
-      data: 1321,
+      data: 350,
     },
   ],
 }
@@ -162,7 +162,7 @@ export const FinanceIncrementalSales: FC = (props) => {
               </TableCell>
               <TableCell align="right">
                 <Typography color="textSecondary" variant="body2">
-                  {numeral(item.data).format("$0,0.00")}
+                  {item.data}
                 </Typography>
               </TableCell>
             </TableRow>

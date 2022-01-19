@@ -14,7 +14,7 @@ const items = [
   {
     color: "#F99E49",
     label: "Serving Opps",
-    subtitle: "Fair condition",
+    subtitle: "Fair",
     value: 50,
   },
   {

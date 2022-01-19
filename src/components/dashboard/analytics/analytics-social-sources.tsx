@@ -24,27 +24,27 @@ const data = {
     {
       color: "#97A4AB",
       data: 4,
-      label: "LinkedIn",
+      label: "Events",
     },
     {
       color: "#C96D20",
       data: 10,
-      label: "Paid Ads",
+      label: "Campus",
     },
     {
       color: "#3A8E5D",
       data: 20,
-      label: "Saddleback.com",
+      label: "Serving Opps",
     },
     {
       color: "#1C93C4",
       data: 10,
-      label: "Twitter",
+      label: "Paypal",
     },
     {
       color: "#455a64",
       data: 70,
-      label: "Facebook",
+      label: "Web",
     },
   ],
 }
@@ -92,7 +92,12 @@ export const AnalyticsSocialSources: FC = () => {
           series={chartSeries}
           type="donut"
         />
-        <Grid container>
+        <Grid
+          container
+          sx={{
+            mt: 20,
+          }}
+        >
           {data.series.map((item) => (
             <Grid
               item

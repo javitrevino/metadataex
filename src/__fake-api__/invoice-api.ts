@@ -11,7 +11,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "contact@acme.com",
-          name: "Facebook",
+          name: "Events",
         },
         dueDate: addDays(now, 5).getTime(),
         issueDate: subHours(now, 1).getTime(),
@@ -24,7 +24,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "sales@blind-spots.com",
-          name: "Events",
+          name: "Campus",
         },
         dueDate: addDays(now, 6).getTime(),
         issueDate: subHours(now, 1).getTime(),
@@ -37,7 +37,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "sales@beauty-clinic.com",
-          name: "Events",
+          name: "Paypal",
         },
         dueDate: addDays(now, 9).getTime(),
         issueDate: subHours(now, 1).getTime(),
@@ -63,7 +63,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "sales@matt-jason.com",
-          name: "Saddleback.com",
+          name: "Web",
         },
         dueDate: addDays(now, 17).getTime(),
         issueDate: subDays(subHours(now, 4), 2).getTime(),
@@ -76,7 +76,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "support@terrythomas.io",
-          name: "LinkedIn",
+          name: "Paypal",
         },
         dueDate: addDays(now, 11).getTime(),
         issueDate: subDays(subHours(now, 4), 6).getTime(),
@@ -89,7 +89,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "contact@dispatcher.co.uk",
-          name: "Saddleback.com",
+          name: "Web",
         },
         dueDate: addDays(now, 3).getTime(),
         issueDate: subDays(subHours(now, 2), 15).getTime(),
@@ -102,7 +102,7 @@ class InvoiceApi {
         currency: "$",
         customer: {
           email: "info@novelty.co.uk",
-          name: "Instagram",
+          name: "Serving Opps",
         },
         dueDate: addDays(now, 1).getTime(),
         issueDate: subDays(subHours(now, 2), 15).getTime(),

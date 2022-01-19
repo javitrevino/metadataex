@@ -39,14 +39,7 @@ interface InvoiceListFiltersProps {
   open?: boolean
 }
 
-const customers = [
-  "Events",
-  "Saddleback.com",
-  "Facebook",
-  "Family",
-  "LinkedIn",
-  "Campus",
-]
+const customers = ["Events", "Serving Opps", "Web", "Campus", "Paypal", "Other"]
 
 const FiltersDrawerDesktop = styled(Drawer)({
   flexShrink: 0,

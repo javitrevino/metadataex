@@ -66,7 +66,7 @@ let board: Board = {
       isSubscribed: true,
       labels: [],
       memberIds: [],
-      name: "Interview for the Church Manager",
+      name: "Church Manager Interviews",
     },
     {
       id: "5e849c977ef6265938bfd90b",

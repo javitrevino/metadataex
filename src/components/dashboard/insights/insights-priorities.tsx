@@ -34,8 +34,8 @@ interface Vehicle {
 
 const vehicles: Vehicle[] = [
   {
-    id: "New Social Media Strategy",
-    endingRoute: "Southern California",
+    id: "Social Strategy Meetup 2022",
+    endingRoute: "Lake Forest",
     startingRoute: "Marketing",
     status: "success",
     temperature: 8,
