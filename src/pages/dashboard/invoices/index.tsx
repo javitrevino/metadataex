@@ -189,7 +189,7 @@ const InvoiceList: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Invoice List | Material Kit Pro</title>
+        <title>Contributions | Ministry Managemento</title>
       </Head>
       <Box
         component="main"

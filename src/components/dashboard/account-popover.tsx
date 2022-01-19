@@ -40,7 +40,7 @@ export const AccountPopover: FC<AccountPopoverProps> = (props) => {
     try {
       onClose?.()
       await logout()
-      router.push("/")
+      router.push("/authentication")
     } catch (err) {
       console.error(err)
       toast.error("Unable to logout.")
@@ -109,7 +109,7 @@ export const AccountPopover: FC<AccountPopoverProps> = (props) => {
         </NextLink>
 
         <Divider />
-        <MenuItem>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <LogoutIcon fontSize="small" />
           </ListItemIcon>

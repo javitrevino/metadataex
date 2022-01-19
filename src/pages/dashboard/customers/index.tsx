@@ -250,7 +250,7 @@ const CustomerList: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ministry Management | Follow Ups </title>
+        <title> Follow Ups | Ministry Management </title>
       </Head>
       <Box
         component="main"

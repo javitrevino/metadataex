@@ -92,12 +92,7 @@ export const AnalyticsSocialSources: FC = () => {
           series={chartSeries}
           type="donut"
         />
-        <Grid
-          container
-          sx={{
-            mt: 20,
-          }}
-        >
+        <Grid container>
           {data.series.map((item) => (
             <Grid
               item

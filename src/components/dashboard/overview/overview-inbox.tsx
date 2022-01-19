@@ -111,13 +111,6 @@ export const OverviewInbox: FC = (props) => (
             }
             sx={{ pr: 2 }}
           />
-          <Typography
-            color="textSecondary"
-            sx={{ whiteSpace: "nowrap" }}
-            variant="caption"
-          >
-            {formatDistanceToNowStrict(message.date, { addSuffix: true })}
-          </Typography>
         </ListItem>
       ))}
     </List>

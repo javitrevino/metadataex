@@ -68,7 +68,7 @@ const Kanban: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ministry Management | Board</title>
+        <title>Board |Ministry Management </title>
       </Head>
       <Box
         component="main"
