@@ -1,56 +1,43 @@
-import type { FC } from 'react';
-import NextLink from 'next/link';
-import PropTypes from 'prop-types';
-import { AppBar, Box, IconButton, Link, Toolbar } from '@mui/material';
-import { Menu as MenuIcon } from '../../icons/menu';
-import { Logo } from '../logo';
+import type { FC } from "react"
+import NextLink from "next/link"
+import PropTypes from "prop-types"
+import { AppBar, Box, IconButton, Link, Toolbar } from "@mui/material"
+import { Menu as MenuIcon } from "../../icons/menu"
+import { Logo } from "../logo"
 
 interface DocsNavbarProps {
-  onOpenSidebar?: () => void;
+  onOpenSidebar?: () => void
 }
 
 export const DocsNavbar: FC<DocsNavbarProps> = ({ onOpenSidebar }) => (
   <AppBar
     elevation={0}
     sx={{
-      backgroundColor: 'background.paper',
-      borderBottomColor: 'divider',
-      borderBottomStyle: 'solid',
+      backgroundColor: "background.paper",
+      borderBottomColor: "divider",
+      borderBottomStyle: "solid",
       borderBottomWidth: 1,
-      color: 'text.secondary'
+      color: "text.secondary",
     }}
   >
     <Toolbar sx={{ height: 64 }}>
-      <NextLink
-        href="/"
-        passHref
-      >
+      <NextLink href="/" passHref>
         <a>
           <Logo
             sx={{
               height: 40,
-              width: 40
+              width: 40,
             }}
           />
         </a>
       </NextLink>
       <Box sx={{ flexGrow: 1 }} />
-      <NextLink
-        href="/dashboard"
-        passHref
-      >
-        <Link
-          color="textSecondary"
-          underline="none"
-          variant="subtitle2"
-        >
-          Live Demo
+      <NextLink href="/dashboard" passHref>
+        <Link color="textSecondary" underline="none" variant="subtitle2">
+          Open Prototype
         </Link>
       </NextLink>
-      <NextLink
-        href="/browse"
-        passHref
-      >
+      <NextLink href="/browse" passHref>
         <Link
           color="textSecondary"
           sx={{ ml: 2 }}
@@ -65,17 +52,17 @@ export const DocsNavbar: FC<DocsNavbarProps> = ({ onOpenSidebar }) => (
         onClick={onOpenSidebar}
         sx={{
           display: {
-            lg: 'none'
+            lg: "none",
           },
-          ml: 2
+          ml: 2,
         }}
       >
         <MenuIcon fontSize="small" />
       </IconButton>
     </Toolbar>
   </AppBar>
-);
+)
 
 DocsNavbar.propTypes = {
-  onOpenSidebar: PropTypes.func
-};
+  onOpenSidebar: PropTypes.func,
+}

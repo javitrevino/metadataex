@@ -56,7 +56,7 @@ export const MainSidebar: FC<MainSidebarProps> = (props) => {
             underline="none"
             variant="subtitle2"
           >
-            Live Demo
+            Open Prototype
           </MainSidebarLink>
         </NextLink>
         <NextLink href="/browse" passHref>
