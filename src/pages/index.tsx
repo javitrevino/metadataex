@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Ministry Management</title>
+        <title>Task 2</title>
       </Head>
       <main>
         <HomeHero />

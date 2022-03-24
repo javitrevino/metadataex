@@ -30,7 +30,7 @@ export const HomeHero: FC = (props) => {
           Made By Javier
         </Typography>
         <Typography align="center" variant="h1">
-          Ministry Management Prototype
+          Test Prototype
         </Typography>
 
         <Box

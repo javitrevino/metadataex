@@ -51,7 +51,7 @@ const App: FC<EnhancedAppProps> = (props) => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Ministry Management</title>
+        <title>Task 2</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ReduxProvider store={store}>
