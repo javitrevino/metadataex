@@ -30,7 +30,7 @@ const Login: NextPage = () => {
   return (
     <>
       <Head>
-        <title> Test Login Task 2 Exercise</title>
+        <title> Test Login Task Exercise</title>
       </Head>
       <Box
         component="main"
