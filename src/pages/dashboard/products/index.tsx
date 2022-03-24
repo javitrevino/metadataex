@@ -131,7 +131,7 @@ const ProductList: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Product List | Ministry Management</title>
+        <title>Dashboard: Product List Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

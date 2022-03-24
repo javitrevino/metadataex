@@ -138,7 +138,7 @@ const Browse: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse | Ministry Management</title>
+        <title>Browse Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

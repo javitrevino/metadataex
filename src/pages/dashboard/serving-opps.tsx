@@ -33,7 +33,7 @@ const ServingOpps: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Serving Opps | Ministry Management</title>
+        <title>Serving Opps Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

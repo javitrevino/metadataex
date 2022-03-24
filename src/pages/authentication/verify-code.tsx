@@ -30,7 +30,7 @@ const VerifyCode: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Verify Code | Ministry Management</title>
+        <title>Verify Code Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

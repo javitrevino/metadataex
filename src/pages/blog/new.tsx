@@ -41,7 +41,7 @@ const BlogPostCreate: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Blog: Post Create | Ministry Management</title>
+        <title>Blog: Post Create Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

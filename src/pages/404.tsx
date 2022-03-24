@@ -23,7 +23,7 @@ const NotFound: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Error: Not Found | Ministry Management</title>
+        <title>Error: Not Found Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

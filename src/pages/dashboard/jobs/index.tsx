@@ -60,7 +60,7 @@ const JobBrowse: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Job Browse | Ministry Management</title>
+        <title>Dashboard: Job Browse Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

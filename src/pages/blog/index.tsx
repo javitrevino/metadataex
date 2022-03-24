@@ -47,7 +47,7 @@ const BlogPostList: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Blog: Post List | Ministry Management</title>
+        <title>Blog: Post List Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -21,7 +21,7 @@ const BrowseGridLists: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Grid Lists | Ministry Management</title>
+        <title>Browse: Grid Lists Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

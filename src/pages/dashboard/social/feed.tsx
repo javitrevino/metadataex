@@ -42,7 +42,7 @@ const SocialFeed: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Social Feed | Ministry Management</title>
+        <title>Dashboard: Social Feed Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

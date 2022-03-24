@@ -24,7 +24,7 @@ const Logistics: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Insights | Ministry Management</title>
+        <title>Insights Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

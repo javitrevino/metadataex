@@ -99,7 +99,7 @@ const Chat: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Chat | Ministry Management</title>
+        <title>Dashboard: Chat Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

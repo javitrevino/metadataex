@@ -232,7 +232,7 @@ const Calendar: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Calendar | Ministry Management</title>
+        <title>Dashboard: Calendar Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

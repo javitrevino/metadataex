@@ -23,7 +23,7 @@ const BrowseDetailLists: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Detail Lists | Ministry Management</title>
+        <title>Browse: Detail Lists Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -23,7 +23,7 @@ const BrowseQuickStats: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Quick Stats | Ministry Management</title>
+        <title>Browse: Quick Stats Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

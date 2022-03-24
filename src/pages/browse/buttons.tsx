@@ -18,7 +18,7 @@ const BrowseButtons: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Buttons | Ministry Management</title>
+        <title>Browse: Buttons Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

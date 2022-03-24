@@ -33,7 +33,7 @@ const Register: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Register | Ministry Management</title>
+        <title>Register Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

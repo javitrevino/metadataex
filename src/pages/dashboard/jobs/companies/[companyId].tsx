@@ -81,7 +81,7 @@ const CompanyDetails: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Company Details | Ministry Management</title>
+        <title>Dashboard: Company Details Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

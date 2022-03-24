@@ -26,7 +26,7 @@ const BrowseGroupedLists: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Grouped Lists | Ministry Management</title>
+        <title>Browse: Grouped Lists Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -15,7 +15,7 @@ export const BrowseTypography: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Typography | Ministry Management</title>
+        <title>Browse: Typography Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

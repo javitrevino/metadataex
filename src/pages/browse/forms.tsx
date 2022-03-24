@@ -31,7 +31,7 @@ const BrowseForms: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Forms | Ministry Management</title>
+        <title>Browse: Forms Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

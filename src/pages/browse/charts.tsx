@@ -27,7 +27,7 @@ const BrowseCharts: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Charts | Ministry Management</title>
+        <title>Browse: Charts Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

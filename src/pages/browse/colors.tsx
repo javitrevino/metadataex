@@ -17,7 +17,7 @@ const BrowseColors: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Colors | Ministry Management</title>
+        <title>Browse: Colors Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

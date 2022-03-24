@@ -30,7 +30,7 @@ const PasswordReset: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Password Reset | Ministry Management</title>
+        <title>Password Reset Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

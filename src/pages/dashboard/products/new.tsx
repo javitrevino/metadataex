@@ -16,7 +16,7 @@ const ProductCreate: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Product Create | Ministry Management</title>
+        <title>Dashboard: Product Create Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

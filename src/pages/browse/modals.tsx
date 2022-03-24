@@ -27,7 +27,7 @@ export const BrowseModals: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Modals | Ministry Management</title>
+        <title>Browse: Modals Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

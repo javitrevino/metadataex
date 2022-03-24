@@ -108,7 +108,7 @@ const Mail: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Mail | Ministry Management</title>
+        <title>Dashboard: Mail Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -78,7 +78,7 @@ const JobCreate: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Job Create | Ministry Management</title>
+        <title>Dashboard: Job Create Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

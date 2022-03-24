@@ -75,7 +75,7 @@ const CustomerDetails: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Customer Details | Ministry Management</title>
+        <title>Dashboard: Customer Details Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -20,7 +20,7 @@ const BrowseInputs: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Inputs | Ministry Management</title>
+        <title>Browse: Inputs Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

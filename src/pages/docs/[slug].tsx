@@ -55,7 +55,7 @@ const Article: NextPage<{ article?: Article }> = (props) => {
   return (
     <>
       <Head>
-        <title>{`Docs: ${article.title} | Ministry Management`}</title>
+        <title>{`Docs: ${article.title} Task 2 Exercise`}</title>
       </Head>
       <Container maxWidth="lg" sx={{ pb: "120px" }}>
         <DocsContent content={article.content} />

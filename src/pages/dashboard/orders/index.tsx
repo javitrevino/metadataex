@@ -226,7 +226,7 @@ const OrderList: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Order List | Ministry Management</title>
+        <title>Dashboard: Order List Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

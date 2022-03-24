@@ -26,7 +26,7 @@ const Pricing: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Pricing | Ministry Management</title>
+        <title>Pricing Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

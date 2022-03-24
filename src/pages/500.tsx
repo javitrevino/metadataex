@@ -23,7 +23,7 @@ const ServerError: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Error: Server Error | Ministry Management</title>
+        <title>Error: Server Error Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

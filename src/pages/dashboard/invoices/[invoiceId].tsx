@@ -62,7 +62,7 @@ const InvoiceDetails: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Invoice Details | Ministry Management</title>
+        <title>Dashboard: Invoice Details Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

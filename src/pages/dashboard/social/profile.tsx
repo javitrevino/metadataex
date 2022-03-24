@@ -82,7 +82,7 @@ export const SocialProfile: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Social Profile | Ministry Management</title>
+        <title>Dashboard: Social Profile Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -23,7 +23,7 @@ const AuthorizationRequired: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Error: Authorization Required | Ministry Management</title>
+        <title>Error: Authorization Required Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

@@ -39,7 +39,7 @@ const Overview: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Overview | Ministry Management </title>
+        <title>Overview Task 2 Exercise </title>
       </Head>
       <Box
         component="main"

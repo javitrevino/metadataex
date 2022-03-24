@@ -26,7 +26,7 @@ const BrowseTables: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Browse: Tables | Ministry Management</title>
+        <title>Browse: Tables Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

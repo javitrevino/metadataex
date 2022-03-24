@@ -34,7 +34,7 @@ const Account: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Account | Ministry Management</title>
+        <title>Dashboard: Account Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

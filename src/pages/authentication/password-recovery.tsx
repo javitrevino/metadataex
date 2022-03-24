@@ -27,7 +27,7 @@ const PasswordRecovery: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Password Recovery | Ministry Management</title>
+        <title>Password Recovery Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

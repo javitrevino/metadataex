@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Contact | Ministry Management</title>
+        <title>Contact Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

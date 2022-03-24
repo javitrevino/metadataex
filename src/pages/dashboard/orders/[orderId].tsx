@@ -53,7 +53,7 @@ const OrderDetails: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Order Details | Ministry Management</title>
+        <title>Dashboard: Order Details Task 2 Exercise</title>
       </Head>
       <Box
         component="main"

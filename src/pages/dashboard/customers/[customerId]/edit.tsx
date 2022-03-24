@@ -48,7 +48,7 @@ const CustomerEdit: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Dashboard: Customer Edit | Ministry Management</title>
+        <title>Dashboard: Customer Edit Task 2 Exercise</title>
       </Head>
       <Box
         component="main"
