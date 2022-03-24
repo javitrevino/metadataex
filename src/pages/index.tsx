@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Material Kit Pro</title>
+        <title>Ministry Management</title>
       </Head>
       <main>
         <HomeHero />

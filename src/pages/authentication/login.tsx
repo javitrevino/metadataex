@@ -9,6 +9,7 @@ import { JWTLogin } from "../../components/authentication/jwt-login"
 import { Logo } from "../../components/logo"
 import { useAuth } from "../../hooks/use-auth"
 import { gtm } from "../../lib/gtm"
+import { AnalyticsTrafficSources } from "src/components/dashboard/analytics/analytics-traffic-sources"
 
 const platformIcons = {
   Amplify: "/static/icons/amplify.svg",
@@ -41,7 +42,6 @@ const Login: NextPage = () => {
         }}
       >
         <Container
-          maxWidth="sm"
           sx={{
             py: {
               xs: "60px",
@@ -49,63 +49,7 @@ const Login: NextPage = () => {
             },
           }}
         >
-          <Box
-            sx={{
-              alignItems: "center",
-              backgroundColor: "black",
-              borderColor: "divider",
-              borderRadius: 1,
-              borderStyle: "solid",
-              borderWidth: 1,
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              mb: 4,
-              p: 2,
-              "& > img": {
-                height: 32,
-                width: "auto",
-                flexGrow: 0,
-                flexShrink: 0,
-                alignContent: "center",
-              },
-            }}
-          >
-            <Logo />
-          </Box>
-          <Card elevation={16} sx={{ p: 4 }}>
-            <Box
-              sx={{
-                alignItems: "center",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-            >
-              <NextLink href="/" passHref>
-                <a>
-                  <Logo
-                    sx={{
-                      height: 40,
-                      width: 40,
-                    }}
-                  />
-                </a>
-              </NextLink>
-              <Typography variant="h4">Ministry Management</Typography>
-              <Typography color="textSecondary" sx={{ mt: 2 }} variant="body2">
-                Sign in to see the prototype
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                flexGrow: 1,
-                mt: 3,
-              }}
-            >
-              {platform === "JWT" && <JWTLogin />}
-            </Box>
-          </Card>
+          <AnalyticsTrafficSources />
         </Container>
       </Box>
     </>

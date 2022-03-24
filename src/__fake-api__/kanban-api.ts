@@ -51,7 +51,7 @@ let board: Board = {
       isSubscribed: false,
       labels: [],
       memberIds: [],
-      name: "New Social Media Strategy",
+      name: "New Social Media Campaing",
     },
     {
       id: "5e849c90fabe1f1f4b3557f6",

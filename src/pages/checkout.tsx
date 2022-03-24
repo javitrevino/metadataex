@@ -1,120 +1,114 @@
-import { useState, useEffect } from 'react';
-import type { ChangeEvent, FormEvent } from 'react';
-import type { NextPage } from 'next';
-import NextLink from 'next/link';
-import Head from 'next/head';
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
-import type { SelectChangeEvent } from '@mui/material';
-import { CheckoutBilling } from '../components/checkout/checkout-billing';
-import { CheckoutOrderSummary } from '../components/checkout/checkout-order-summary';
-import { ArrowLeft as ArrowLeftIcon } from '../icons/arrow-left';
-import { ArrowRight as ArrowRightIcon } from '../icons/arrow-right';
-import { Lock as LockIcon } from '../icons/lock';
-import { gtm } from '../lib/gtm';
+import { useState, useEffect } from "react"
+import type { ChangeEvent, FormEvent } from "react"
+import type { NextPage } from "next"
+import NextLink from "next/link"
+import Head from "next/head"
+import { Box, Button, Container, Grid, Typography } from "@mui/material"
+import type { SelectChangeEvent } from "@mui/material"
+import { CheckoutBilling } from "../components/checkout/checkout-billing"
+import { CheckoutOrderSummary } from "../components/checkout/checkout-order-summary"
+import { ArrowLeft as ArrowLeftIcon } from "../icons/arrow-left"
+import { ArrowRight as ArrowRightIcon } from "../icons/arrow-right"
+import { Lock as LockIcon } from "../icons/lock"
+import { gtm } from "../lib/gtm"
 
 interface Product {
-  id: string;
-  image: string;
-  name: string;
-  price: number;
-  quantity: number;
+  id: string
+  image: string
+  name: string
+  price: number
+  quantity: number
 }
 
 const productsData: Product[] = [
   {
-    id: '97375399bf10f57d0f0f7fd9',
-    image: '/static/mock-images/products/product_1.png',
-    name: 'Healthcare Erbology',
+    id: "97375399bf10f57d0f0f7fd9",
+    image: "/static/mock-images/products/product_1.png",
+    name: "Healthcare Erbology",
     price: 23.99,
-    quantity: 1
+    quantity: 1,
   },
   {
-    id: 'ece4069546ff025047b97735',
-    image: '/static/mock-images/products/product_2.png',
-    name: 'Makeup Lancome Rouge',
-    price: 95.00,
-    quantity: 1
-  }
-];
+    id: "ece4069546ff025047b97735",
+    image: "/static/mock-images/products/product_2.png",
+    name: "Makeup Lancome Rouge",
+    price: 95.0,
+    quantity: 1,
+  },
+]
 
 const Checkout: NextPage = () => {
   const [billing, setBilling] = useState({
-    address: '',
-    cardExpirationDate: '',
-    cardNumber: '',
-    cardOwner: '',
-    cardSecurityCode: '',
-    firstName: '',
-    lastName: '',
-    optionalAddress: '',
-    paymentMethod: 'visa',
-    state: '',
-    zip: ''
-  });
-  const [products, setProducts] = useState<Product[]>(productsData);
+    address: "",
+    cardExpirationDate: "",
+    cardNumber: "",
+    cardOwner: "",
+    cardSecurityCode: "",
+    firstName: "",
+    lastName: "",
+    optionalAddress: "",
+    paymentMethod: "visa",
+    state: "",
+    zip: "",
+  })
+  const [products, setProducts] = useState<Product[]>(productsData)
 
   useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
+    gtm.push({ event: "page_view" })
+  }, [])
 
   const handleBillingChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    setBilling((prevBilling) => (
-      {
-        ...prevBilling,
-        [event.target.name]: event.target.value
-      }
-    ));
-  };
+    setBilling((prevBilling) => ({
+      ...prevBilling,
+      [event.target.name]: event.target.value,
+    }))
+  }
 
   const handleProductQuantityChange = (
     event: SelectChangeEvent<number>,
     productId: string
   ): void => {
-    setProducts((prevProducts) => prevProducts.map((product) => {
-      if (product.id === productId) {
-        return {
-          ...product,
-          quantity: event.target.value as number
-        };
-      }
+    setProducts((prevProducts) =>
+      prevProducts.map((product) => {
+        if (product.id === productId) {
+          return {
+            ...product,
+            quantity: event.target.value as number,
+          }
+        }
 
-      return product;
-    }));
-  };
+        return product
+      })
+    )
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-  };
+    event.preventDefault()
+  }
 
-  const subtotal = products
-    .reduce((
-      accumulator,
-      product
-    ) => accumulator + product.price * product.quantity, 0);
-  const shippingTax = 12;
-  const total = subtotal + shippingTax;
+  const subtotal = products.reduce(
+    (accumulator, product) => accumulator + product.price * product.quantity,
+    0
+  )
+  const shippingTax = 12
+  const total = subtotal + shippingTax
 
   return (
     <>
       <Head>
-        <title>
-          Checkout | Material Kit Pro
-        </title>
+        <title>Checkout | Ministry Management</title>
       </Head>
       <Box
         component="main"
         sx={{
-          backgroundColor: 'background.paper',
+          backgroundColor: "background.paper",
           flexGrow: 1,
-          py: 8
+          py: 8,
         }}
       >
         <Container maxWidth="lg">
           <form onSubmit={handleSubmit}>
-            <NextLink
-              href="/dashboard"
-              passHref
-            >
+            <NextLink href="/dashboard" passHref>
               <Button
                 component="a"
                 startIcon={<ArrowLeftIcon fontSize="small" />}
@@ -122,32 +116,18 @@ const Checkout: NextPage = () => {
                 Dashboard
               </Button>
             </NextLink>
-            <Typography
-              variant="h3"
-              sx={{ mt: 3 }}
-            >
+            <Typography variant="h3" sx={{ mt: 3 }}>
               Checkout
             </Typography>
             <Box mt={6}>
-              <Grid
-                container
-                spacing={6}
-              >
-                <Grid
-                  item
-                  md={7}
-                  xs={12}
-                >
+              <Grid container spacing={6}>
+                <Grid item md={7} xs={12}>
                   <CheckoutBilling
                     billing={billing}
                     onChange={handleBillingChange}
                   />
                 </Grid>
-                <Grid
-                  item
-                  md={5}
-                  xs={12}
-                >
+                <Grid item md={5} xs={12}>
                   <CheckoutOrderSummary
                     onQuantityChange={handleProductQuantityChange}
                     products={products}
@@ -161,26 +141,16 @@ const Checkout: NextPage = () => {
             <Box sx={{ mt: 6 }}>
               <Box
                 sx={{
-                  alignItems: 'center',
-                  display: 'flex'
+                  alignItems: "center",
+                  display: "flex",
                 }}
               >
-                <LockIcon
-                  fontWeight="small"
-                  sx={{ color: 'text.secondary' }}
-                />
-                <Typography
-                  sx={{ ml: 2 }}
-                  variant="subtitle2"
-                >
+                <LockIcon fontWeight="small" sx={{ color: "text.secondary" }} />
+                <Typography sx={{ ml: 2 }} variant="subtitle2">
                   Secure Checkout
                 </Typography>
               </Box>
-              <Typography
-                color="textSecondary"
-                sx={{ mt: 2 }}
-                variant="body2"
-              >
+              <Typography color="textSecondary" sx={{ mt: 2 }} variant="body2">
                 Your purchases are secured by an industry best encryption
                 service – Braintree
               </Typography>
@@ -199,7 +169,7 @@ const Checkout: NextPage = () => {
         </Container>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Checkout;
+export default Checkout

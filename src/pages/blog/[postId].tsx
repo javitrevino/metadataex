@@ -107,7 +107,7 @@ const BlogPostDetails: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Blog: Post Details | Material Kit Pro</title>
+        <title>Blog: Post Details | Ministry Management</title>
       </Head>
       <Box
         component="main"

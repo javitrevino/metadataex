@@ -1,7 +1,7 @@
-import { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
-import type { ChangeEvent, MouseEvent } from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react"
+import type { ChangeEvent, MouseEvent } from "react"
+import type { NextPage } from "next"
+import Head from "next/head"
 import {
   Box,
   Button,
@@ -11,243 +11,238 @@ import {
   Tab,
   Tabs,
   TextField,
-  Typography
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { orderApi } from '../../../__fake-api__/order-api';
-import { AuthGuard } from '../../../components/authentication/auth-guard';
-import { DashboardLayout } from '../../../components/dashboard/dashboard-layout';
-import { OrderDrawer } from '../../../components/dashboard/order/order-drawer';
-import { OrderListTable } from '../../../components/dashboard/order/order-list-table';
-import { useMounted } from '../../../hooks/use-mounted';
-import { Plus as PlusIcon } from '../../../icons/plus';
-import { Search as SearchIcon } from '../../../icons/search';
-import { gtm } from '../../../lib/gtm';
-import type { Order, OrderStatus } from '../../../types/order';
+  Typography,
+} from "@mui/material"
+import { styled } from "@mui/material/styles"
+import { orderApi } from "../../../__fake-api__/order-api"
+import { AuthGuard } from "../../../components/authentication/auth-guard"
+import { DashboardLayout } from "../../../components/dashboard/dashboard-layout"
+import { OrderDrawer } from "../../../components/dashboard/order/order-drawer"
+import { OrderListTable } from "../../../components/dashboard/order/order-list-table"
+import { useMounted } from "../../../hooks/use-mounted"
+import { Plus as PlusIcon } from "../../../icons/plus"
+import { Search as SearchIcon } from "../../../icons/search"
+import { gtm } from "../../../lib/gtm"
+import type { Order, OrderStatus } from "../../../types/order"
 
 interface Filters {
-  query?: string;
-  status?: OrderStatus;
+  query?: string
+  status?: OrderStatus
 }
 
 const tabs = [
   {
-    label: 'All',
-    value: 'all'
+    label: "All",
+    value: "all",
   },
   {
-    label: 'Canceled',
-    value: 'canceled'
+    label: "Canceled",
+    value: "canceled",
   },
   {
-    label: 'Completed',
-    value: 'complete'
+    label: "Completed",
+    value: "complete",
   },
   {
-    label: 'Pending',
-    value: 'pending'
+    label: "Pending",
+    value: "pending",
   },
   {
-    label: 'Rejected',
-    value: 'rejected'
-  }
-];
+    label: "Rejected",
+    value: "rejected",
+  },
+]
 
 const sortOptions = [
   {
-    label: 'Newest',
-    value: 'desc'
+    label: "Newest",
+    value: "desc",
   },
   {
-    label: 'Oldest',
-    value: 'asc'
-  }
-];
+    label: "Oldest",
+    value: "asc",
+  },
+]
 
-const applyFilters = (
-  orders: Order[],
-  filters: Filters
-) => orders.filter((order) => {
-  if (filters.query) {
-    // Checks only the order number, but can be extended to support other fields, such as customer
-    // name, email, etc.
-    const containsQuery = order.number.toLowerCase().includes(filters.query.toLowerCase());
+const applyFilters = (orders: Order[], filters: Filters) =>
+  orders.filter((order) => {
+    if (filters.query) {
+      // Checks only the order number, but can be extended to support other fields, such as customer
+      // name, email, etc.
+      const containsQuery = order.number
+        .toLowerCase()
+        .includes(filters.query.toLowerCase())
 
-    if (!containsQuery) {
-      return false;
+      if (!containsQuery) {
+        return false
+      }
     }
-  }
 
-  if (typeof filters.status !== 'undefined') {
-    const statusMatched = order.status === filters.status;
+    if (typeof filters.status !== "undefined") {
+      const statusMatched = order.status === filters.status
 
-    if (!statusMatched) {
-      return false;
+      if (!statusMatched) {
+        return false
+      }
     }
-  }
 
-  return true;
-});
+    return true
+  })
 
-const applySort = (orders: Order[], order: 'asc' | 'desc') => orders.sort((a, b) => {
-  const comparator = a.createdAt > b.createdAt ? -1 : 1;
+const applySort = (orders: Order[], order: "asc" | "desc") =>
+  orders.sort((a, b) => {
+    const comparator = a.createdAt > b.createdAt ? -1 : 1
 
-  return order === 'desc' ? comparator : -comparator;
-});
+    return order === "desc" ? comparator : -comparator
+  })
 
 const applyPagination = (
   orders: Order[],
   page: number,
   rowsPerPage: number
-): Order[] => orders.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
+): Order[] => orders.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 
-const OrderListInner = styled(
-  'div',
-  { shouldForwardProp: (prop) => prop !== 'open' }
-)<{ open?: boolean; }>(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    overflow: 'hidden',
-    paddingBottom: theme.spacing(8),
-    paddingTop: theme.spacing(8),
-    zIndex: 1,
-    [theme.breakpoints.up('lg')]: {
-      marginRight: -500
+const OrderListInner = styled("div", {
+  shouldForwardProp: (prop) => prop !== "open",
+})<{ open?: boolean }>(({ theme, open }) => ({
+  flexGrow: 1,
+  overflow: "hidden",
+  paddingBottom: theme.spacing(8),
+  paddingTop: theme.spacing(8),
+  zIndex: 1,
+  [theme.breakpoints.up("lg")]: {
+    marginRight: -500,
+  },
+  transition: theme.transitions.create("margin", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    [theme.breakpoints.up("lg")]: {
+      marginRight: 0,
     },
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
     }),
-    ...(open && {
-      [theme.breakpoints.up('lg')]: {
-        marginRight: 0
-      },
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen
-      })
-    })
-  })
-);
+  }),
+}))
 
 const OrderList: NextPage = () => {
-  const isMounted = useMounted();
-  const rootRef = useRef<HTMLDivElement | null>(null);
-  const queryRef = useRef<HTMLInputElement | null>(null);
-  const [currentTab, setCurrentTab] = useState<string>('all');
-  const [sort, setSort] = useState<'asc' | 'desc'>('desc');
-  const [page, setPage] = useState<number>(0);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(5);
-  const [orders, setOrders] = useState<Order[]>([]);
+  const isMounted = useMounted()
+  const rootRef = useRef<HTMLDivElement | null>(null)
+  const queryRef = useRef<HTMLInputElement | null>(null)
+  const [currentTab, setCurrentTab] = useState<string>("all")
+  const [sort, setSort] = useState<"asc" | "desc">("desc")
+  const [page, setPage] = useState<number>(0)
+  const [rowsPerPage, setRowsPerPage] = useState<number>(5)
+  const [orders, setOrders] = useState<Order[]>([])
   const [filters, setFilters] = useState<Filters>({
-    query: '',
-    status: undefined
-  });
-  const [drawer, setDrawer] = useState<{ isOpen: boolean; orderId?: string; }>({
+    query: "",
+    status: undefined,
+  })
+  const [drawer, setDrawer] = useState<{ isOpen: boolean; orderId?: string }>({
     isOpen: false,
-    orderId: null
-  });
+    orderId: null,
+  })
 
   useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
+    gtm.push({ event: "page_view" })
+  }, [])
 
   const getOrders = useCallback(async () => {
     try {
-      const data = await orderApi.getOrders();
+      const data = await orderApi.getOrders()
 
       if (isMounted()) {
-        setOrders(data);
+        setOrders(data)
       }
     } catch (err) {
-      console.error(err);
+      console.error(err)
     }
-  }, [isMounted]);
+  }, [isMounted])
 
   useEffect(
     () => {
-      getOrders();
+      getOrders()
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
-  );
+  )
 
   const handleTabsChange = (event: ChangeEvent<{}>, value: string): void => {
-    setCurrentTab(value);
+    setCurrentTab(value)
     setFilters((prevState) => ({
       ...prevState,
-      status: value === 'all' ? undefined : value as OrderStatus
-    }));
-  };
+      status: value === "all" ? undefined : (value as OrderStatus),
+    }))
+  }
 
   const handleQueryChange = (event: FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
+    event.preventDefault()
     setFilters((prevState) => ({
       ...prevState,
-      query: queryRef.current?.value
-    }));
-  };
+      query: queryRef.current?.value,
+    }))
+  }
 
   const handleSortChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    const value = event.target.value as 'asc' | 'desc';
-    setSort(value);
-  };
+    const value = event.target.value as "asc" | "desc"
+    setSort(value)
+  }
 
-  const handlePageChange = (event: MouseEvent<HTMLButtonElement> | null, newPage: number): void => {
-    setPage(newPage);
-  };
+  const handlePageChange = (
+    event: MouseEvent<HTMLButtonElement> | null,
+    newPage: number
+  ): void => {
+    setPage(newPage)
+  }
 
-  const handleRowsPerPageChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-  };
+  const handleRowsPerPageChange = (
+    event: ChangeEvent<HTMLInputElement>
+  ): void => {
+    setRowsPerPage(parseInt(event.target.value, 10))
+  }
 
   const handleOpenDrawer = (orderId: string): void => {
     setDrawer({
       isOpen: true,
-      orderId
-    });
-  };
+      orderId,
+    })
+  }
 
   const handleCloseDrawer = () => {
     setDrawer({
       isOpen: false,
-      orderId: null
-    });
-  };
+      orderId: null,
+    })
+  }
 
   // Usually query is done on backend with indexing solutions
-  const filteredOrders = applyFilters(orders, filters);
-  const sortedOrders = applySort(filteredOrders, sort);
-  const paginatedOrders = applyPagination(sortedOrders, page, rowsPerPage);
+  const filteredOrders = applyFilters(orders, filters)
+  const sortedOrders = applySort(filteredOrders, sort)
+  const paginatedOrders = applyPagination(sortedOrders, page, rowsPerPage)
 
   return (
     <>
       <Head>
-        <title>
-          Dashboard: Order List | Material Kit Pro
-        </title>
+        <title>Dashboard: Order List | Ministry Management</title>
       </Head>
       <Box
         component="main"
         ref={rootRef}
         sx={{
-          backgroundColor: 'background.paper',
-          display: 'flex',
+          backgroundColor: "background.paper",
+          display: "flex",
           flexGrow: 1,
-          overflow: 'hidden'
+          overflow: "hidden",
         }}
       >
         <OrderListInner open={drawer.isOpen}>
           <Box sx={{ px: 3 }}>
-            <Grid
-              container
-              justifyContent="space-between"
-              spacing={3}
-            >
+            <Grid container justifyContent="space-between" spacing={3}>
               <Grid item>
-                <Typography variant="h4">
-                  Orders
-                </Typography>
+                <Typography variant="h4">Orders</Typography>
               </Grid>
               <Grid item>
                 <Button
@@ -268,22 +263,18 @@ const OrderList: NextPage = () => {
               variant="scrollable"
             >
               {tabs.map((tab) => (
-                <Tab
-                  key={tab.value}
-                  label={tab.label}
-                  value={tab.value}
-                />
+                <Tab key={tab.value} label={tab.label} value={tab.value} />
               ))}
             </Tabs>
           </Box>
           <Divider />
           <Box
             sx={{
-              alignItems: 'center',
-              display: 'flex',
-              flexWrap: 'wrap',
+              alignItems: "center",
+              display: "flex",
+              flexWrap: "wrap",
               m: -1.5,
-              p: 3
+              p: 3,
             }}
           >
             <Box
@@ -291,7 +282,7 @@ const OrderList: NextPage = () => {
               onSubmit={handleQueryChange}
               sx={{
                 flexGrow: 1,
-                m: 1.5
+                m: 1.5,
               }}
             >
               <TextField
@@ -303,7 +294,7 @@ const OrderList: NextPage = () => {
                     <InputAdornment position="start">
                       <SearchIcon fontSize="small" />
                     </InputAdornment>
-                  )
+                  ),
                 }}
                 placeholder="Search by order number"
               />
@@ -318,10 +309,7 @@ const OrderList: NextPage = () => {
               value={sort}
             >
               {sortOptions.map((option) => (
-                <option
-                  key={option.value}
-                  value={option.value}
-                >
+                <option key={option.value} value={option.value}>
                   {option.label}
                 </option>
               ))}
@@ -346,15 +334,13 @@ const OrderList: NextPage = () => {
         />
       </Box>
     </>
-  );
-};
+  )
+}
 
 OrderList.getLayout = (page) => (
   <AuthGuard>
-    <DashboardLayout>
-      {page}
-    </DashboardLayout>
+    <DashboardLayout>{page}</DashboardLayout>
   </AuthGuard>
-);
+)
 
-export default OrderList;
+export default OrderList

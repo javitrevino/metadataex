@@ -1,8 +1,8 @@
-import { useCallback, useState, useEffect } from 'react';
-import type { ChangeEvent } from 'react';
-import type { NextPage } from 'next';
-import NextLink from 'next/link';
-import Head from 'next/head';
+import { useCallback, useState, useEffect } from "react"
+import type { ChangeEvent } from "react"
+import type { NextPage } from "next"
+import NextLink from "next/link"
+import Head from "next/head"
 import {
   Avatar,
   Box,
@@ -13,102 +13,99 @@ import {
   Tab,
   Tabs,
   Tooltip,
-  Typography
-} from '@mui/material';
-import { blueGrey } from '@mui/material/colors';
-import AddPhotoIcon from '@mui/icons-material/AddPhotoAlternate';
-import { socialApi } from '../../../__fake-api__/social-api';
-import { AuthGuard } from '../../../components/authentication/auth-guard';
-import { DashboardLayout } from '../../../components/dashboard/dashboard-layout';
-import { SocialConnections } from '../../../components/dashboard/social/social-connections';
-import { SocialTimeline } from '../../../components/dashboard/social/social-timeline';
-import { useMounted } from '../../../hooks/use-mounted';
-import { Chat as ChatIcon } from '../../../icons/chat';
-import { DotsHorizontal as DotsHorizontalIcon } from '../../../icons/dots-horizontal';
-import { UserAdd as UserAddIcon } from '../../../icons/user-add';
-import { gtm } from '../../../lib/gtm';
-import type { Profile } from '../../../types/social';
+  Typography,
+} from "@mui/material"
+import { blueGrey } from "@mui/material/colors"
+import AddPhotoIcon from "@mui/icons-material/AddPhotoAlternate"
+import { socialApi } from "../../../__fake-api__/social-api"
+import { AuthGuard } from "../../../components/authentication/auth-guard"
+import { DashboardLayout } from "../../../components/dashboard/dashboard-layout"
+import { SocialConnections } from "../../../components/dashboard/social/social-connections"
+import { SocialTimeline } from "../../../components/dashboard/social/social-timeline"
+import { useMounted } from "../../../hooks/use-mounted"
+import { Chat as ChatIcon } from "../../../icons/chat"
+import { DotsHorizontal as DotsHorizontalIcon } from "../../../icons/dots-horizontal"
+import { UserAdd as UserAddIcon } from "../../../icons/user-add"
+import { gtm } from "../../../lib/gtm"
+import type { Profile } from "../../../types/social"
 
 const tabs = [
-  { label: 'Timeline', value: 'timeline' },
-  { label: 'Connections', value: 'connections' }
-];
+  { label: "Timeline", value: "timeline" },
+  { label: "Connections", value: "connections" },
+]
 
 export const SocialProfile: NextPage = () => {
-  const isMounted = useMounted();
-  const [currentTab, setCurrentTab] = useState<string>('timeline');
-  const [profile, setProfile] = useState<Profile | null>(null);
-  const [connectedStatus, setConnectedStatus] = useState<string>('not_connected');
+  const isMounted = useMounted()
+  const [currentTab, setCurrentTab] = useState<string>("timeline")
+  const [profile, setProfile] = useState<Profile | null>(null)
+  const [connectedStatus, setConnectedStatus] =
+    useState<string>("not_connected")
 
   useEffect(() => {
-    gtm.push({ event: 'page_view' });
-  }, []);
+    gtm.push({ event: "page_view" })
+  }, [])
 
   const getProfile = useCallback(async () => {
     try {
-      const data = await socialApi.getProfile();
+      const data = await socialApi.getProfile()
 
       if (isMounted()) {
-        setProfile(data);
+        setProfile(data)
       }
     } catch (err) {
-      console.error(err);
+      console.error(err)
     }
-  }, [isMounted]);
+  }, [isMounted])
 
   useEffect(
     () => {
-      getProfile();
+      getProfile()
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [getProfile]
-  );
+  )
 
   const handleConnectToggle = (): void => {
-    setConnectedStatus((prevConnectedStatus) => (
-      prevConnectedStatus === 'not_connected'
-        ? 'pending'
-        : 'not_connected'
-    ));
-  };
+    setConnectedStatus((prevConnectedStatus) =>
+      prevConnectedStatus === "not_connected" ? "pending" : "not_connected"
+    )
+  }
 
   const handleTabsChange = (event: ChangeEvent, value: string): void => {
-    setCurrentTab(value);
-  };
+    setCurrentTab(value)
+  }
 
   if (!profile) {
-    return null;
+    return null
   }
 
   return (
     <>
       <Head>
-        <title>
-          Dashboard: Social Profile | Material Kit Pro
-        </title>
+        <title>Dashboard: Social Profile | Ministry Management</title>
       </Head>
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          py: 8
+          py: 8,
         }}
       >
         <Container maxWidth="lg">
           <Box
             style={{ backgroundImage: `url(${profile.cover})` }}
             sx={{
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
               borderRadius: 1,
               height: 348,
-              position: 'relative',
-              '&:hover': {
-                '& button': {
-                  visibility: 'visible'
-                }
-              }
+              position: "relative",
+              "&:hover": {
+                "& button": {
+                  visibility: "visible",
+                },
+              },
             }}
           >
             <Button
@@ -117,19 +114,19 @@ export const SocialProfile: NextPage = () => {
                 backgroundColor: blueGrey[900],
                 bottom: {
                   lg: 24,
-                  xs: 'auto'
+                  xs: "auto",
                 },
-                color: 'common.white',
-                position: 'absolute',
+                color: "common.white",
+                position: "absolute",
                 right: 24,
                 top: {
-                  lg: 'auto',
-                  xs: 24
+                  lg: "auto",
+                  xs: 24,
                 },
-                visibility: 'hidden',
-                '&:hover': {
-                  backgroundColor: blueGrey[900]
-                }
+                visibility: "hidden",
+                "&:hover": {
+                  backgroundColor: blueGrey[900],
+                },
               }}
               variant="contained"
             >
@@ -138,50 +135,45 @@ export const SocialProfile: NextPage = () => {
           </Box>
           <Box
             sx={{
-              alignItems: 'center',
-              display: 'flex',
-              mt: 5
+              alignItems: "center",
+              display: "flex",
+              mt: 5,
             }}
           >
             <Avatar
               src={profile.avatar}
               sx={{
                 height: 64,
-                width: 64
+                width: 64,
               }}
             />
             <Box sx={{ ml: 2 }}>
-              <Typography
-                color="textSecondary"
-                variant="overline"
-              >
+              <Typography color="textSecondary" variant="overline">
                 {profile.bio}
               </Typography>
-              <Typography variant="h6">
-                {profile.name}
-              </Typography>
+              <Typography variant="h6">{profile.name}</Typography>
             </Box>
             <Box sx={{ flexGrow: 1 }} />
             <Box
               sx={{
                 display: {
-                  md: 'block',
-                  xs: 'none'
-                }
+                  md: "block",
+                  xs: "none",
+                },
               }}
             >
-              {connectedStatus === 'not_connected' && (
+              {connectedStatus === "not_connected" && (
                 <Button
                   onClick={handleConnectToggle}
                   size="small"
-                  startIcon={(<UserAddIcon fontSize="small" />)}
+                  startIcon={<UserAddIcon fontSize="small" />}
                   sx={{ ml: 2 }}
                   variant="outlined"
                 >
                   Connect
                 </Button>
               )}
-              {connectedStatus === 'pending' && (
+              {connectedStatus === "pending" && (
                 <Button
                   color="primary"
                   onClick={handleConnectToggle}
@@ -192,14 +184,11 @@ export const SocialProfile: NextPage = () => {
                   Pending
                 </Button>
               )}
-              <NextLink
-                href="/dashboard/chat"
-                passHref
-              >
+              <NextLink href="/dashboard/chat" passHref>
                 <Button
                   component="a"
                   size="small"
-                  startIcon={(<ChatIcon fontSize="small" />)}
+                  startIcon={<ChatIcon fontSize="small" />}
                   sx={{ ml: 1 }}
                   variant="contained"
                 >
@@ -225,31 +214,27 @@ export const SocialProfile: NextPage = () => {
               variant="scrollable"
             >
               {tabs.map((tab) => (
-                <Tab
-                  key={tab.value}
-                  label={tab.label}
-                  value={tab.value}
-                />
+                <Tab key={tab.value} label={tab.label} value={tab.value} />
               ))}
             </Tabs>
             <Divider />
             <Box sx={{ py: 3 }}>
-              {currentTab === 'timeline' && <SocialTimeline profile={profile} />}
-              {currentTab === 'connections' && <SocialConnections />}
+              {currentTab === "timeline" && (
+                <SocialTimeline profile={profile} />
+              )}
+              {currentTab === "connections" && <SocialConnections />}
             </Box>
           </Container>
         </Box>
       </Box>
     </>
-  );
-};
+  )
+}
 
 SocialProfile.getLayout = (page) => (
   <AuthGuard>
-    <DashboardLayout>
-      {page}
-    </DashboardLayout>
+    <DashboardLayout>{page}</DashboardLayout>
   </AuthGuard>
-);
+)
 
-export default SocialProfile;
+export default SocialProfile

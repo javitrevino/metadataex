@@ -21,19 +21,51 @@ const data = {
     {
       color: "#6DCFF6",
       data: [
-        3350, 1840, 2254, 5780, 9349, 5241, 2770, 2051, 3764, 2385, 5912, 8323,
+        3350, 1840, 2254, 5780, 9349, 5241, 2770, 2051, 3764, 2385, 3912, 6323,
       ],
-      name: "Word-of-mouth",
+      name: "CPL",
     },
     {
       color: "#3A8E5D",
-      data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35],
-      name: "Family Referral",
+      data: [
+        2135, 2341, 2362, 4255, 1300, 1800, 6000, 3756, 3688, 5100, 1500, 735,
+      ],
+      name: "Spend",
     },
     {
       color: "#EB4EA1",
-      data: [100, 122, 50, 300, 250, 400, 312, 200, 10, 60, 90, 400],
-      name: "Digital",
+      data: [
+        2220, 1322, 4350, 3300, 2950, 4000, 2312, 1200, 3110, 6056, 490, 1400,
+      ],
+      name: "Leads",
+    },
+    {
+      color: "#134174",
+      data: [
+        2450, 1322, 1378, 2200, 1350, 1300, 912, 1400, 2300, 3290, 2310, 2400,
+      ],
+      name: "Clicks",
+    },
+    {
+      color: "#F99E49",
+      data: [
+        1350, 2422, 2278, 2200, 1150, 1300, 5112, 8100, 960, 900, 1220, 4000,
+      ],
+      name: "CPC",
+    },
+    {
+      color: "#C68EF6",
+      data: [
+        6000, 7222, 3000, 2600, 5110, 2900, 650, 4000, 1000, 3650, 1620, 4890,
+      ],
+      name: "Impressions",
+    },
+    {
+      color: "#DA6868",
+      data: [
+        1000, 2222, 2650, 8400, 7222, 1200, 1312, 5100, 7000, 4580, 7890, 9500,
+      ],
+      name: "MQLS",
     },
   ],
   xaxis: {
@@ -57,9 +89,14 @@ const data = {
 export const AnalyticsTrafficSources: FC<CardProps> = (props) => {
   const theme = useTheme()
   const [selectedSeries, setSelectedSeries] = useState([
-    "Word-of-mouth",
-    "Family Referral",
-    "Digital",
+    "CPL",
+    "Spend",
+    "Leads",
+    "Leads",
+    "Clicks",
+    "CPC",
+    "Impressions",
+    "MQLS",
   ])
 
   const handleChange = (event, name: string): void => {
@@ -81,13 +118,16 @@ export const AnalyticsTrafficSources: FC<CardProps> = (props) => {
       toolbar: {
         show: false,
       },
+      zoom: {
+        enabled: false,
+      },
     },
     colors: chartSeries.map((item) => item.color),
     dataLabels: {
       enabled: false,
     },
     fill: {
-      opacity: 1,
+      opacity: 10,
     },
     grid: {
       borderColor: theme.palette.divider,
@@ -112,7 +152,7 @@ export const AnalyticsTrafficSources: FC<CardProps> = (props) => {
       },
       radius: 2,
       shape: "circle",
-      size: 4,
+      size: 3,
       strokeWidth: 0,
     },
     stroke: {
@@ -175,7 +215,7 @@ export const AnalyticsTrafficSources: FC<CardProps> = (props) => {
 
   return (
     <Card {...props}>
-      <CardHeader title="Attendee Sources" />
+      <CardHeader title="" />
       <Divider />
       <Box
         sx={{

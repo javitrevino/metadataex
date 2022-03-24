@@ -29,6 +29,7 @@ import { Reports as ReportsIcon } from "../../icons/reports"
 import { Users as UsersIcon } from "../../icons/users"
 import { gtm } from "../../lib/gtm"
 import { OverviewCampuses } from "src/components/dashboard/overview/overview-campuses"
+import { AnalyticsTrafficSources } from "src/components/dashboard/analytics/analytics-traffic-sources"
 
 const Overview: NextPage = () => {
   useEffect(() => {
@@ -47,22 +48,15 @@ const Overview: NextPage = () => {
           py: 8,
         }}
       >
-        <Container maxWidth="xl">
-          <Grid container spacing={4}>
-            <Grid item md={6} xs={12}>
-              <EventsOverview />
-            </Grid>
-            <Grid item md={6} xs={12}>
-              <OverviewServing />
-            </Grid>
-
-            <Grid item md={12} xs={12}>
-              <OverviewCampuses />
-            </Grid>
-            <Grid item md={12} xs={12}>
-              <OverviewInbox />
-            </Grid>
-          </Grid>
+        <Container
+          sx={{
+            py: {
+              xs: "60px",
+              md: "120px",
+            },
+          }}
+        >
+          <AnalyticsTrafficSources />
         </Container>
       </Box>
     </>
